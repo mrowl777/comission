@@ -9,8 +9,8 @@ function init(){
 }
 
 function show_cur_field(){
-  $(this).hide(500);
-  $('#cur').hide(500);
+  $(this).hide();
+  $('#cur').hide();
   $('.cur_block').removeClass('hidden');
 }
 
