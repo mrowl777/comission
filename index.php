@@ -18,10 +18,10 @@ $leaders = $_handler->get_leaders();
 <body>
 
 <div class="content">
-    <div class="block">
+    <!-- <div class="block">
         <input type="text" id="new_leader" placeholder="Новый руководитель">
         <button class="submit">OK</button>
-    </div>
+    </div> -->
     <div class="block">
         <input type="text" id="new_group" placeholder="Новая группа">
         <button class="submit">OK</button>
@@ -63,7 +63,14 @@ $leaders = $_handler->get_leaders();
         <th>ФИО</th>
         <th>Группа</th>
         <th>Тема</th>
-        <th>Руководитель</th>
+        <th>
+            <div id="cur">Руководитель</div>
+            <div><img id="cur_plus_btn" src="plus.png"/></div>
+            <div class="block hidden cur_block">
+                <input type="text" id="new_leader" placeholder="Новый руководитель">
+                <button class="submit">OK</button>
+            </div>
+        </th>
         <th>Комментарий</th>
         <th>Оценка</th>
     </tr>

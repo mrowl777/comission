@@ -5,6 +5,13 @@ function init(){
   $('.edit_comment').on('keyup', update_comment );
   $('.update_mark').change( update_mark );
   $('.update_leader').change( update_leader );
+  $('#cur_plus_btn').click( show_cur_field );
+}
+
+function show_cur_field(){
+  $(this).hide(500);
+  $('#cur').hide(500);
+  $('.cur_block').removeClass('hidden');
 }
 
 function update_leader(){
