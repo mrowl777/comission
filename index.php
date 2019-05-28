@@ -121,7 +121,7 @@ $leaders = $_handler->get_leaders();
             }
             ?>
             
-        </select>
+        </select> 
     </td>
     <td><input class="intable" type="text" id="table_comment" placeholder="Комментарий"></td>
     <td><button id="table_add" class="submit">Добавить</button></td>
