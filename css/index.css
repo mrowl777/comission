@@ -102,6 +102,12 @@ select{
 .add_field{
   padding-left: 6px;
 }
+#cur{
+  float: left;
+}
+.plus_block{
+  float: right;
+}
 .submit{
   width: 32px;
   padding: 7px 0;
