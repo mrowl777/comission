@@ -6,7 +6,15 @@ function init(){
   $('.update_mark').change( update_mark );
   $('.update_leader').change( update_leader );
   $('#cur_plus_btn').click( show_cur_field );
+  $('#gr_plus_btn').click( show_gr_field );
 }
+
+function show_gr_field(){
+  $(this).hide();
+  $('#gr').hide();
+  $('.gr_block').removeClass('hidden');
+}
+
 
 function show_cur_field(){
   $(this).hide();

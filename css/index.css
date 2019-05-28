@@ -102,7 +102,7 @@ select{
 .add_field{
   padding-left: 6px;
 }
-#cur{
+#cur, #gr{
   float: left;
 }
 .plus_block{
@@ -127,7 +127,7 @@ select{
 .tbtn{
   width: 85px;
 }
-.cur_block{
+.cur_block,.gr_block{
   display: flex;
 }
 .d_table{

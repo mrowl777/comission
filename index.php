@@ -18,14 +18,6 @@ $leaders = $_handler->get_leaders();
 <body>
 
 <div class="content">
-    <!-- <div class="block">
-        <input type="text" id="new_leader" placeholder="Новый руководитель">
-        <button class="submit">OK</button>
-    </div> -->
-    <div class="block">
-        <input type="text" id="new_group" placeholder="Новая группа">
-        <button class="submit">OK</button>
-    </div>
     <div class="new_student <?php if($students){ echo "hidden"; }  ?>">
         <input type="text" id="new_student_l_name" placeholder="Фамилия">
         <input type="text" id="new_student_f_name" placeholder="Имя">
@@ -61,7 +53,14 @@ $leaders = $_handler->get_leaders();
     <table class="tftable" border="1">
     <tr>
         <th>ФИО</th>
-        <th>Группа</th>
+        <th>
+            <div id="gr">Группа</div>
+            <div class="plus_block"><img id="gr_plus_btn" style="width: 20px;" src="plus.png"/></div>
+            <div class="hidden gr_block">
+                <input type="text" id="new_group" placeholder="Новая группа">
+                <button class="submit">OK</button>
+            </div>
+        </th>
         <th>Тема</th>
         <th>
             <div id="cur">Руководитель</div>
