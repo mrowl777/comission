@@ -1,0 +1,132 @@
+*{
+  margin:0;
+  padding:0;
+  -webkit-box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  box-sizing:border-box;
+}
+  
+body{
+  background:#263238;
+  overflow: auto;
+}
+
+.input{
+  width: 500px;
+  height: 30px;
+  background: none;
+  border: none;
+  border-bottom: solid 2px #fff;
+  outline: none;
+  font-size: 22px;
+  color: #fff;
+  padding-bottom: 6px;
+}
+
+.search{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 540px;
+}
+
+.search img{
+  width: 30px;
+}
+
+.data_block{
+  display: none;
+}
+
+.data_block div {
+  display: flex;
+}
+.welcome{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  color: darkgray;
+  margin-top: 25px;
+  line-height: 1.5;
+}
+.welcome a{
+  color: red;
+}
+
+.content{
+  display: flex;
+  flex-direction: column;
+  color: darkgray;
+  margin-top: 51px;
+  line-height: 1.5;
+}
+.block{
+  color: darkgray;
+  display: flex;
+  align-items: center;
+  width: 60%;
+  justify-content: flex-end;
+  padding: 10 0;
+}
+.block > p{
+  margin-right: 25;
+}
+.new_student{
+  margin-left: 10px;
+}
+.new_student input{
+  width: 170px;
+}
+input, select{
+  background: darkgrey;
+  border: none;
+  border-radius: 6px;
+  padding: 5px 0px;
+  width: 180px;
+  outline: none;
+  padding-left: 6px;
+}
+select{
+  cursor: pointer;
+}
+.footer{
+  position: absolute;
+  right: 20px;
+}
+.footer > p > a{
+  color: #FFF;
+}
+.hidden{
+  display: none;
+}
+.add_field{
+  padding-left: 6px;
+}
+.submit{
+  width: 32px;
+  padding: 7px 0;
+  border-radius: 5px;
+  background: darkgrey;
+  outline: none;
+  border: none;
+  margin-left: 10px;
+  cursor: pointer;
+}
+.d_table{
+
+}
+.tftable {
+  font-size:12px;
+  color:#333333;
+  width:80%;
+  border-width: 1px;
+  border-color: #a9a9a9;
+  border-collapse: collapse;
+  margin-left: 10%;
+  margin-top: 50px;
+  margin-bottom: 100px;
+}
+.tftable th {font-size:12px;background-color:#b8b8b8;border-width: 1px;padding: 8px;border-style: solid;border-color: #a9a9a9;text-align:left;}
+.tftable tr {background-color:#ffffff;}
+.tftable td {font-size:12px;border-width: 1px;padding: 8px;border-style: solid;border-color: #a9a9a9;}
+.tftable tr:hover {background-color:#ffff99;}
