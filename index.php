@@ -1,6 +1,6 @@
 <?php
 
-include 'db_handler.php';
+include 'handler.php';
 
 $_handler = new Handler();
 $students = $_handler->get_students();
