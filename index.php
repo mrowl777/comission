@@ -26,7 +26,7 @@ $leaders = $_handler->get_leaders();
         <input type="text" id="new_group" placeholder="Новая группа">
         <button class="submit">OK</button>
     </div>
-    <div class="new_student">
+    <div class="new_student <?php if($students){ echo "hidden"; }  ?>">
         <input type="text" id="new_student_l_name" placeholder="Фамилия">
         <input type="text" id="new_student_f_name" placeholder="Имя">
         <input type="text" id="new_student_s_name" placeholder="Отчество">
@@ -95,6 +95,37 @@ $leaders = $_handler->get_leaders();
         echo "</tr>";
     }
     ?>
+    <tr>
+    <td><input type="text" id="table_name" placeholder="ФИО"></td>
+    <td>
+        <select id="table_group">
+            <option selected disabled>Группа</option>
+            <?php
+            if($groups){
+                foreach ( $groups as $key => $group ){
+                    echo "<option value='".$key."'>".$group."</option>";
+                }
+            }
+            ?>
+        </select>
+    </td>
+    <td><input type="text" id="table_theme" placeholder="Тема"></td>
+    <td>
+        <select id="table_leader">
+            <option selected disabled>Руководитель</option>
+            <?php
+            if($leaders){
+                foreach ( $leaders as $key => $leader ){
+                    echo "<option value='".$key."'>".$leader."</option>";
+                }
+            }
+            ?>
+            
+        </select>
+    </td>
+    <td><input type="text" id="table_comment" placeholder="Комментарий"></td>
+    <td><button id="table_add" class="submit">Добавить</button></td>
+    </tr>
     </table>
 </div>
 </body>

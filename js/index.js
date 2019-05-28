@@ -1,6 +1,7 @@
 function init(){
   $('.submit').click( submit_form );
   $('#new_stud_add').click( add_sudent );
+  $('#table_add').click( add_student_table );
   $('.edit_comment').on('keyup', update_comment );
   $('.update_mark').change( update_mark );
   $('.update_leader').change( update_leader );
@@ -42,6 +43,37 @@ function update_comment(){
         id: id,
         text: text
     }
+  );
+}
+
+function add_student_table(){
+  var title = $('#table_name').val();
+  var arr = title.split(' ');
+  var first_name = arr[1];
+  var last_name = arr[0];
+  var surname = arr[2];
+  var group = $('#table_group').find('option:selected').val();
+  var leader = $('#table_leader').find('option:selected').val();
+  var comment = $('#table_comment').val();
+  var theme = $('#table_theme').val();
+  if( first_name == '' || last_name == '' || surname == '' ){
+    alert('Введите ФИО через пробел');
+    return;
+  }
+
+  $.post(
+    "handler.php",
+    {
+        action: "add_student",
+        first_name: first_name,
+        last_name: last_name,
+        surname: surname,
+        group: group,
+        theme: theme,
+        leader: leader,
+        comment: comment
+    },
+    on_action_answer
   );
 }
 
