@@ -35,7 +35,7 @@ class db_handler {
     }
 
     function update_comment($id, $text){
-        $query = "UPDATE `students` SET `comment`='".$text."' WHERE `id` = '"<div class="$id"></div>."'";
+        $query = "UPDATE `students` SET `comment`='".$text."' WHERE `id` = '".$id."'";
         $db_helper = $this->connect_db();
         $db_helper->query( $query );
         $this->close_connection( $db_helper );
