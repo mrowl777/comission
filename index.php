@@ -67,34 +67,6 @@ $leaders = $_handler->get_leaders();
         <th>Комментарий</th>
         <th>Оценка</th>
     </tr>
-    <?php
-    foreach( $students as $student ){
-        $none = $student['mark'] == 0 ? 'selected' : '';
-        $two = $student['mark'] == 2 ? 'selected' : '';
-        $three = $student['mark'] == 3 ? 'selected' : '';
-        $four = $student['mark'] == 4 ? 'selected' : '';
-        $five = $student['mark'] == 5 ? 'selected' : '';
-        echo "<tr id='".$student['id']."'>";
-        echo "<td>" . $student['title'] . "</td>";
-        echo "<td>" . $student['group'] . "</td>";
-        echo "<td>" . $student['theme'] . "</td>";
-        echo "<td><select class='update_leader'>";
-        foreach ( $leaders as $key => $leader ){
-            $status = $leader == $student['leader'] ? 'selected' : '';
-            echo "<option value='".$key."' ".$status.">".$leader."</option>";
-        }
-        echo "</select></td>";
-        echo "<td><input type='text' class='edit_comment' value='".$student['comment']."'></td>";
-        echo "<td><select class='update_mark'>";
-        echo "<option value='0' ".$none.">Отсутствует</option>";
-        echo "<option value='2' ".$two.">2</option>";
-        echo "<option value='3' ".$three.">3</option>";
-        echo "<option value='4' ".$four.">4</option>";
-        echo "<option value='5' ".$five.">5</option>";
-        echo "</select></td>";
-        echo "</tr>";
-    }
-    ?>
     <tr>
     <td><input class="intable" type="text" id="table_name" placeholder="ФИО"></td>
     <td>
@@ -126,6 +98,34 @@ $leaders = $_handler->get_leaders();
     <td><input class="intable" type="text" id="table_comment" placeholder="Комментарий"></td>
     <td><button id="table_add" class="submit tbtn">Добавить</button></td>
     </tr>
+    <?php
+    foreach( $students as $student ){
+        $none = $student['mark'] == 0 ? 'selected' : '';
+        $two = $student['mark'] == 2 ? 'selected' : '';
+        $three = $student['mark'] == 3 ? 'selected' : '';
+        $four = $student['mark'] == 4 ? 'selected' : '';
+        $five = $student['mark'] == 5 ? 'selected' : '';
+        echo "<tr id='".$student['id']."'>";
+        echo "<td>" . $student['title'] . "</td>";
+        echo "<td>" . $student['group'] . "</td>";
+        echo "<td>" . $student['theme'] . "</td>";
+        echo "<td><select class='update_leader'>";
+        foreach ( $leaders as $key => $leader ){
+            $status = $leader == $student['leader'] ? 'selected' : '';
+            echo "<option value='".$key."' ".$status.">".$leader."</option>";
+        }
+        echo "</select></td>";
+        echo "<td><input type='text' class='edit_comment' value='".$student['comment']."'></td>";
+        echo "<td><select class='update_mark'>";
+        echo "<option value='0' ".$none.">Отсутствует</option>";
+        echo "<option value='2' ".$two.">2</option>";
+        echo "<option value='3' ".$three.">3</option>";
+        echo "<option value='4' ".$four.">4</option>";
+        echo "<option value='5' ".$five.">5</option>";
+        echo "</select></td>";
+        echo "</tr>";
+    }
+    ?>
     </table>
 </div>
 </body>
