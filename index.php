@@ -67,7 +67,7 @@ $leaders = $_handler->get_leaders();
         <th>Комментарий</th>
         <th>Оценка</th>
     </tr>
-    <tr>
+    <tr style="background: wheat;">
     <td><input class="intable" type="text" id="table_name" placeholder="ФИО"></td>
     <td>
         <select id="table_group" class="intable" >
