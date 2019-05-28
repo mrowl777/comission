@@ -69,13 +69,24 @@ $leaders = $_handler->get_leaders();
     </tr>
     <?php
     foreach( $students as $student ){
+        $none = $student['mark'] == 0 ? 'selected' : '';
+        $two = $student['mark'] == 2 ? 'selected' : '';
+        $three = $student['mark'] == 3 ? 'selected' : '';
+        $four = $student['mark'] == 4 ? 'selected' : '';
+        $five = $student['mark'] == 5 ? 'selected' : '';
         echo "<tr id='".$student['id']."'>";
         echo "<td>" . $student['title'] . "</td>";
         echo "<td>" . $student['group'] . "</td>";
         echo "<td>" . $student['theme'] . "</td>";
         echo "<td>" . $student['leader'] . "</td>";
         echo "<td><input type='text' class='edit_comment' value='".$student['comment']."'></td>";
-        echo "<td>" . $student['mark'] . "</td>";
+        echo "<td><select class='update_mark'>";
+        echo "<option value='0' ".$none.">Отсутствует</option>";
+        echo "<option value='2' ".$two.">2</option>";
+        echo "<option value='3' ".$three.">3</option>";
+        echo "<option value='4' ".$four.">4</option>";
+        echo "<option value='5' ".$five.">5</option>";
+        echo "</select></td>";
         echo "</tr>";
     }
     ?>

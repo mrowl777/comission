@@ -2,6 +2,20 @@ function init(){
   $('.submit').click( submit_form );
   $('#new_stud_add').click( add_sudent );
   $('.edit_comment').on('keyup', update_comment );
+  $('.update_mark').change( update_mark );
+}
+
+function update_mark(){
+  var id = $(this).closest('tr').attr('id');
+  var value = $(this).find('option:selected').val();
+  $.post(
+    "../handler.php",
+    {
+        action: "update_mark",
+        id: id,
+        mark: value
+    },
+  );
 }
 
 function update_comment(){
