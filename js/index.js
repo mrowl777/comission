@@ -36,10 +36,10 @@ function submit_form(){
   var type = $(this).parent().find('input').attr('id');
   var param = $(this).parent().find('input').val();
   switch (type) {
-    case new_leader:
+    case 'new_leader':
       put_leader( param )
       break;
-    case new_group:
+    case 'new_group':
       put_group( param )
       break;
     default:
