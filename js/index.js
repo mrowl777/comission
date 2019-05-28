@@ -1,6 +1,20 @@
 function init(){
   $('.submit').click( submit_form );
   $('#new_stud_add').click( add_sudent );
+  $('.edit_comment').on('keyup', update_comment );
+}
+
+function update_comment(){
+  var id = $(this).closest('tr').attr('id');
+  var text = $(this).val();
+  $.post(
+    "handler.php",
+    {
+        action: "edit_comment",
+        id: id,
+        text: text
+    }
+  );
 }
 
 function add_sudent(){

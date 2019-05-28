@@ -74,7 +74,7 @@ $leaders = $_handler->get_leaders();
         echo "<td>" . $student['group'] . "</td>";
         echo "<td>" . $student['theme'] . "</td>";
         echo "<td>" . $student['leader'] . "</td>";
-        echo "<td>" . $student['comment'] . "</td>";
+        echo "<td><input type='text' class='edit_comment' value='".$student['comment']."'></td>";
         echo "<td>" . $student['mark'] . "</td>";
         echo "</tr>";
     }

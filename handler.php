@@ -16,6 +16,12 @@ class Handler extends db_handler {
         die( json_encode(['result' => 'ok']) );
     }
 
+    function edit_comment(){
+        $id = $_POST['id'];
+        $text = $_POST['text'];
+        $this->update_comment($id, $text);
+    }
+
     function add_leader(){
         $name = $_POST['title'];
         $this->put_leader( $name );
@@ -59,6 +65,9 @@ if( isset( $_POST['action'] ) ){
             break;
         case 'add_group':
             $handler->add_group();
+            break;
+        case 'edit_comment':
+            $handler->edit_comment();
             break;
         default:
             die();
