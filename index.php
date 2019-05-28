@@ -65,8 +65,8 @@ $leaders = $_handler->get_leaders();
         <th>Тема</th>
         <th>
             <div id="cur">Руководитель</div>
-            <div><img id="cur_plus_btn" src="plus.png"/></div>
-            <div class="block hidden cur_block">
+            <div><img id="cur_plus_btn" style="width: 20px;" src="plus.png"/></div>
+            <div class="hidden cur_block">
                 <input type="text" id="new_leader" placeholder="Новый руководитель">
                 <button class="submit">OK</button>
             </div>

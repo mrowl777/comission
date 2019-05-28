@@ -121,6 +121,9 @@ select{
 .tbtn{
   width: 85px;
 }
+.cur_block{
+  display: flex;
+}
 .d_table{
 
 }
