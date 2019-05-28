@@ -118,6 +118,9 @@ select{
   border-radius: 0;
   background: transparent;
 }
+.tbtn{
+  width: 85px;
+}
 .d_table{
 
 }
