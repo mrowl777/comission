@@ -96,9 +96,9 @@ $leaders = $_handler->get_leaders();
     }
     ?>
     <tr>
-    <td><input type="text" id="table_name" placeholder="ФИО"></td>
+    <td><input class="intable" type="text" id="table_name" placeholder="ФИО"></td>
     <td>
-        <select id="table_group">
+        <select id="table_group" class="intable" >
             <option selected disabled>Группа</option>
             <?php
             if($groups){
@@ -109,9 +109,9 @@ $leaders = $_handler->get_leaders();
             ?>
         </select>
     </td>
-    <td><input type="text" id="table_theme" placeholder="Тема"></td>
+    <td><input class="intable" type="text" id="table_theme" placeholder="Тема"></td>
     <td>
-        <select id="table_leader">
+        <select id="table_leader" class="intable" >
             <option selected disabled>Руководитель</option>
             <?php
             if($leaders){
@@ -123,7 +123,7 @@ $leaders = $_handler->get_leaders();
             
         </select>
     </td>
-    <td><input type="text" id="table_comment" placeholder="Комментарий"></td>
+    <td><input class="intable" type="text" id="table_comment" placeholder="Комментарий"></td>
     <td><button id="table_add" class="submit">Добавить</button></td>
     </tr>
     </table>

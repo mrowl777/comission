@@ -112,7 +112,7 @@ select{
   margin-left: 10px;
   cursor: pointer;
 }
-.edit_comment, .update_mark, .update_leader{
+.edit_comment, .update_mark, .update_leader, .intable{
   width: 100%;
   cursor: pointer;
   border-radius: 0;
