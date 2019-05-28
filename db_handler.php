@@ -50,6 +50,14 @@ class db_handler {
         return;
     }
 
+    function update_leader($id, $title){
+        $query = "UPDATE `students` SET `leader`='".$title."' WHERE `id` = '".$id."'";
+        $db_helper = $this->connect_db();
+        $db_helper->query( $query );
+        $this->close_connection( $db_helper );
+        return;
+    }
+
     function put_student( $name, $last_name, $surname, $group, $theme, $leader, $comment ){
         $part_1 = "INSERT INTO `students`(`id`, `f_name`, `l_name`, `s_name`, `_group`, `leader`, `theme`, `comment`, `mark`) VALUES ";
         $part_2 = "('','".$name."','".$last_name."','".$surname."','".$group."','".$leader."','".$theme."','".$comment."','0')";

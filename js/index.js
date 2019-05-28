@@ -3,6 +3,20 @@ function init(){
   $('#new_stud_add').click( add_sudent );
   $('.edit_comment').on('keyup', update_comment );
   $('.update_mark').change( update_mark );
+  $('.update_leader').change( update_leader );
+}
+
+function update_leader(){
+  var id = $(this).closest('tr').attr('id');
+  var value = $(this).find('option:selected').val();
+  $.post(
+    "handler.php",
+    {
+        action: "update_leader",
+        id: id,
+        title: value
+    },
+  );
 }
 
 function update_mark(){

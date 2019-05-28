@@ -28,6 +28,12 @@ class Handler extends db_handler {
         $this->update_mark($id, $mark);
     }
 
+    function edit_leader(){
+        $id = $_POST['id'];
+        $title = $_POST['title'];
+        $this->update_leader($id, $title);
+    }
+
     function add_leader(){
         $name = $_POST['title'];
         $this->put_leader( $name );
@@ -77,6 +83,9 @@ if( isset( $_POST['action'] ) ){
             break;
         case 'update_mark':
             $handler->edit_mark();
+            break;
+        case 'update_leader':
+            $handler->edit_leader();
             break;
         default:
             die();

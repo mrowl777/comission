@@ -78,7 +78,12 @@ $leaders = $_handler->get_leaders();
         echo "<td>" . $student['title'] . "</td>";
         echo "<td>" . $student['group'] . "</td>";
         echo "<td>" . $student['theme'] . "</td>";
-        echo "<td>" . $student['leader'] . "</td>";
+        echo "<td><select class='update_leader'>";
+        foreach ( $leaders as $key => $leader ){
+            $status = $leader == $student['leader'] ? 'selected' : '';
+            echo "<option value='".$key."' ".$status.">".$leader."</option>";
+        }
+        echo "</select></td>";
         echo "<td><input type='text' class='edit_comment' value='".$student['comment']."'></td>";
         echo "<td><select class='update_mark'>";
         echo "<option value='0' ".$none.">Отсутствует</option>";
