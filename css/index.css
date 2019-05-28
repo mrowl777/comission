@@ -97,7 +97,7 @@ select{
   color: #FFF;
 }
 .hidden{
-  display: none;
+  display: none !important;
 }
 .add_field{
   padding-left: 6px;
