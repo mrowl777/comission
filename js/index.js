@@ -9,7 +9,7 @@ function update_mark(){
   var id = $(this).closest('tr').attr('id');
   var value = $(this).find('option:selected').val();
   $.post(
-    "../handler.php",
+    "handler.php",
     {
         action: "update_mark",
         id: id,
