@@ -64,18 +64,12 @@ function submit_form(){
 
 function put_leader( name ){
   var parts = name.split(' ');
-  var l_name;
-  if(typeof(parts[3]) != "undefined" && parts[3] !== null){
-    l_name = parts[3];
-  }else{
-    l_name = parts[2];
-  }
   $.post(
     "handler.php",
     {
         action: "add_leader",
         title: name,
-        last_name = l_name
+        last_name = parts[0]
     },
     on_leader_created
   );
