@@ -152,8 +152,8 @@ if( isset($_GET['action']) ){
 </div>
 
 <form id="login">
-    <label for="username">Логин:</label><input type="text" name="username" class="placeholder" placeholder="Введите логин">
-    <label for="password">Пароль:</label><input type="password" name="password" class="placeholder" placeholder="Введите пароль">
+    <div class="line"><p>Логин:</p><input type="text" name="username"  placeholder="Введите логин"></div>
+    <div class="line"><p>Пароль:</p><input type="password" name="password" placeholder="Введите пароль"></div>
     <input type="submit" value="ВОЙТИ">
 </form>
 
