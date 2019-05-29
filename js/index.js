@@ -1,12 +1,12 @@
 function init(){
-  $('.submit').click( submit_form );
-  $('#new_stud_add').click( add_sudent );
-  $('#table_add').click( add_student_table );
-  $('.edit_comment').on('keyup', update_comment );
-  $('.update_mark').change( update_mark );
-  $('.update_leader').change( update_leader );
-  $('#cur_plus_btn').click( show_cur_field );
-  $('#gr_plus_btn').click( show_gr_field );
+  // $('.submit').click( submit_form );
+  // $('#new_stud_add').click( add_sudent );
+  // $('#table_add').click( add_student_table );
+  // $('.edit_comment').on('keyup', update_comment );
+  // $('.update_mark').change( update_mark );
+  // $('.update_leader').change( update_leader );
+  // $('#cur_plus_btn').click( show_cur_field );
+  // $('#gr_plus_btn').click( show_gr_field );
 
 
   $('#choose_group').change( load_students_list );
@@ -21,154 +21,154 @@ function load_students_list(){
 
 
 
-function show_gr_field(){
-  $(this).hide();
-  $('#gr').hide();
-  $('.gr_block').removeClass('hidden');
-}
+// function show_gr_field(){
+//   $(this).hide();
+//   $('#gr').hide();
+//   $('.gr_block').removeClass('hidden');
+// }
 
 
-function show_cur_field(){
-  $(this).hide();
-  $('#cur').hide();
-  $('.cur_block').removeClass('hidden');
-}
+// function show_cur_field(){
+//   $(this).hide();
+//   $('#cur').hide();
+//   $('.cur_block').removeClass('hidden');
+// }
 
-function update_leader(){
-  var id = $(this).closest('tr').attr('id');
-  var value = $(this).find('option:selected').val();
-  $.post(
-    "handler.php",
-    {
-        action: "update_leader",
-        id: id,
-        title: value
-    },
-  );
-}
+// function update_leader(){
+//   var id = $(this).closest('tr').attr('id');
+//   var value = $(this).find('option:selected').val();
+//   $.post(
+//     "handler.php",
+//     {
+//         action: "update_leader",
+//         id: id,
+//         title: value
+//     },
+//   );
+// }
 
-function update_mark(){
-  var id = $(this).closest('tr').attr('id');
-  var value = $(this).find('option:selected').val();
-  $.post(
-    "handler.php",
-    {
-        action: "update_mark",
-        id: id,
-        mark: value
-    },
-  );
-}
+// function update_mark(){
+//   var id = $(this).closest('tr').attr('id');
+//   var value = $(this).find('option:selected').val();
+//   $.post(
+//     "handler.php",
+//     {
+//         action: "update_mark",
+//         id: id,
+//         mark: value
+//     },
+//   );
+// }
 
-function update_comment(){
-  var id = $(this).closest('tr').attr('id');
-  var text = $(this).val();
-  $.post(
-    "handler.php",
-    {
-        action: "edit_comment",
-        id: id,
-        text: text
-    }
-  );
-}
+// function update_comment(){
+//   var id = $(this).closest('tr').attr('id');
+//   var text = $(this).val();
+//   $.post(
+//     "handler.php",
+//     {
+//         action: "edit_comment",
+//         id: id,
+//         text: text
+//     }
+//   );
+// }
 
-function add_student_table(){
-  var title = $('#table_name').val();
-  var arr = title.split(' ');
-  var first_name = arr[1];
-  var last_name = arr[0];
-  var surname = arr[2];
-  var group = $('#table_group').find('option:selected').val();
-  var leader = $('#table_leader').find('option:selected').val();
-  var comment = $('#table_comment').val();
-  var theme = $('#table_theme').val();
-  if( first_name == '' || last_name == '' || surname == '' ){
-    alert('Введите ФИО через пробел');
-    return;
-  }
+// function add_student_table(){
+//   var title = $('#table_name').val();
+//   var arr = title.split(' ');
+//   var first_name = arr[1];
+//   var last_name = arr[0];
+//   var surname = arr[2];
+//   var group = $('#table_group').find('option:selected').val();
+//   var leader = $('#table_leader').find('option:selected').val();
+//   var comment = $('#table_comment').val();
+//   var theme = $('#table_theme').val();
+//   if( first_name == '' || last_name == '' || surname == '' ){
+//     alert('Введите ФИО через пробел');
+//     return;
+//   }
 
-  $.post(
-    "handler.php",
-    {
-        action: "add_student",
-        first_name: first_name,
-        last_name: last_name,
-        surname: surname,
-        group: group,
-        theme: theme,
-        leader: leader,
-        comment: comment
-    },
-    on_action_answer
-  );
-}
+//   $.post(
+//     "handler.php",
+//     {
+//         action: "add_student",
+//         first_name: first_name,
+//         last_name: last_name,
+//         surname: surname,
+//         group: group,
+//         theme: theme,
+//         leader: leader,
+//         comment: comment
+//     },
+//     on_action_answer
+//   );
+// }
 
-function add_sudent(){
-  var first_name = $('#new_student_f_name').val();
-  var last_name = $('#new_student_l_name').val();
-  var surname = $('#new_student_s_name').val();
-  var group = $('#new_student_group').find('option:selected').val();
-  var leader = $('#new_student_leader').find('option:selected').val();
-  var comment = $('#new_student_comment').val();
-  var theme = $('#new_student_theme').val();
-  if( first_name == '' || last_name == '' || surname == '' ){
-    alert('Заполните все поля!');
-    return;
-  }
+// function add_sudent(){
+//   var first_name = $('#new_student_f_name').val();
+//   var last_name = $('#new_student_l_name').val();
+//   var surname = $('#new_student_s_name').val();
+//   var group = $('#new_student_group').find('option:selected').val();
+//   var leader = $('#new_student_leader').find('option:selected').val();
+//   var comment = $('#new_student_comment').val();
+//   var theme = $('#new_student_theme').val();
+//   if( first_name == '' || last_name == '' || surname == '' ){
+//     alert('Заполните все поля!');
+//     return;
+//   }
 
-  $.post(
-    "handler.php",
-    {
-        action: "add_student",
-        first_name: first_name,
-        last_name: last_name,
-        surname: surname,
-        group: group,
-        theme: theme,
-        leader: leader,
-        comment: comment
-    },
-    on_action_answer
-  );
-}
+//   $.post(
+//     "handler.php",
+//     {
+//         action: "add_student",
+//         first_name: first_name,
+//         last_name: last_name,
+//         surname: surname,
+//         group: group,
+//         theme: theme,
+//         leader: leader,
+//         comment: comment
+//     },
+//     on_action_answer
+//   );
+// }
 
-function submit_form(){
-  var type = $(this).parent().find('input').attr('id');
-  var param = $(this).parent().find('input').val();
-  switch (type) {
-    case 'new_leader':
-      put_leader( param )
-      break;
-    case 'new_group':
-      put_group( param )
-      break;
-    default:
-      break;
-  }
-}
+// function submit_form(){
+//   var type = $(this).parent().find('input').attr('id');
+//   var param = $(this).parent().find('input').val();
+//   switch (type) {
+//     case 'new_leader':
+//       put_leader( param )
+//       break;
+//     case 'new_group':
+//       put_group( param )
+//       break;
+//     default:
+//       break;
+//   }
+// }
 
-function put_leader( name ){
-  $.post(
-    "handler.php",
-    {
-        action: "add_leader",
-        title: name
-    },
-    on_action_answer
-  );
-}
+// function put_leader( name ){
+//   $.post(
+//     "handler.php",
+//     {
+//         action: "add_leader",
+//         title: name
+//     },
+//     on_action_answer
+//   );
+// }
 
-function put_group( title ){
-  $.post(
-    "handler.php",
-    {
-        action: "add_group",
-        title: title
-    },
-    on_action_answer
-  );
-}
+// function put_group( title ){
+//   $.post(
+//     "handler.php",
+//     {
+//         action: "add_group",
+//         title: title
+//     },
+//     on_action_answer
+//   );
+// }
 
 function on_action_answer(){
   alert('Выполнено');

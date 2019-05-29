@@ -137,6 +137,15 @@ select{
 #choose_group{
   margin-left: 15px;
 }
+.each_student{
+  margin-left: 10%;
+
+}
+.each_student a{
+  text-decoration: none;
+  color: aliceblue;
+  cursor: pointer;
+}
 .d_table{
 
 }

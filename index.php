@@ -3,7 +3,7 @@
 include 'handler.php';
 
 $_handler = new Handler();
-$students = $_handler->get_students();
+// $students = $_handler->get_students();
 $groups = $_handler->get_groups();
 $leaders = $_handler->get_leaders();
 
@@ -13,7 +13,10 @@ if( isset($_GET['action']) ){
             $students_list = $_handler->get_students_list($_GET['group_id']);
             $group_selected = true;
             break;
-        
+        case 'get_data':
+            $student_data = $_handler->get_student_data($_GET['student_id']);
+            $group_selected = true;
+            break;
         default:
             break;
     }
@@ -48,7 +51,7 @@ if( isset($_GET['action']) ){
     <div class="second_step <?php if(!$group_selected){ echo "hidden"; }  ?>">
     <?php
         foreach ($students_list as $id => $title) {
-           echo "<div><a href='".$id."' >".$title."</a></div>";
+           echo "<div class='each_student'><a href='?student_id=".$id."&action=get_data' >".$title."</a></div>";
         }
     ?>
     </div>

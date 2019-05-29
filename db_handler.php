@@ -120,8 +120,8 @@ class db_handler {
         return $students;
     }
 
-    function load_stud_list(){
-        $query="SELECT * FROM `students` WHERE 1";
+    function load_student_data( $sid ){
+        $query="SELECT * FROM `students` WHERE `id` = '".$sid."'";
         $db_helper = $this->connect_db();
         $object = $db_helper->query( $query );
         $this->close_connection( $db_helper );
@@ -132,22 +132,49 @@ class db_handler {
             return false;
         }
 
-        $students = [];
-        while ($row = $object->fetch_assoc()) {
-            $title = $row["l_name"] . " " . $row["f_name"] . " " . $row["s_name"];
-            $students[] = [
-                'id' => $row["id"],
-                'title' => $title,
-                'group' => $groups[$row["_group"]],
-                'leader' => $leaders[$row["leader"]],
-                'theme' => $row["theme"],
-                'comment' => $row["comment"],
-                'mark' => $row['mark'],
-            ];
-        }
+        $object = $object->fetch_assoc();
+        $title = $object["l_name"] . " " . $object["f_name"] . " " . $object["s_name"];
+        $student = [
+            'id' => $object["id"],
+            'title' => $title,
+            'group' => $groups[$object["_group"]],
+            'leader' => $leaders[$object["leader"]],
+            'theme' => $object["theme"],
+            'comment' => $object["comment"],
+            'mark' => $object['mark'],
+        ];
 
-        return $students;
+        return $student;
     }
+
+    // function load_stud_list(){
+    //     $query="SELECT * FROM `students` WHERE 1";
+    //     $db_helper = $this->connect_db();
+    //     $object = $db_helper->query( $query );
+    //     $this->close_connection( $db_helper );
+    //     $count = mysqli_num_rows( $object ) === 0;
+    //     $groups = $this->load_groups();
+    //     $leaders = $this->load_leaders();
+    //     if( $count ){
+    //         return false;
+    //     }
+
+    //     $students = [];
+    //     while ($row = $object->fetch_assoc()) {
+    //         $title = $row["l_name"] . " " . $row["f_name"] . " " . $row["s_name"];
+    //         $students[] = [
+    //             'id' => $row["id"],
+    //             'title' => $title,
+    //             'group' => $groups[$row["_group"]],
+    //             'leader' => $leaders[$row["leader"]],
+    //             'theme' => $row["theme"],
+    //             'comment' => $row["comment"],
+    //             'mark' => $row['mark'],
+    //         ];
+    //     }
+
+    //     return $students;
+    // }
 }
 
 ?>
