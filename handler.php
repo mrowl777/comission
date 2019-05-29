@@ -74,8 +74,7 @@ class Handler extends db_handler {
     }
 
     function kill_session(){
-        unset($_COOKIE['rights']);
-        // setcookie('rights', null, -1, '/');
+        setcookie('rights', null, -1);
     }
 
     function try_au(){
