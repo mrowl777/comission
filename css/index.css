@@ -159,6 +159,7 @@ hr{
 .login_btn{
   width: 100%;
   margin-top: 25px;
+  cursor: pointer;
 }
 .line{
   display: flex;

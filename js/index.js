@@ -14,15 +14,17 @@ function try_auth(){
     alert('Заполните поля!');
     return;
   }
-  $.post(
-    "handler.php",
-    {
-        action: "login",
-        login: login,
-        password: password
-    },
-    reload
-  );
+  console.log(login);
+  console.log(password);
+  // $.post(
+  //   "handler.php",
+  //   {
+  //       action: "login",
+  //       login: login,
+  //       password: password
+  //   },
+  //   reload
+  // );
 }
 
 function load_students_list(){
