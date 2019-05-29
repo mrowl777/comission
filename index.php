@@ -47,7 +47,7 @@ if( isset($_GET['action']) ){
 
     <div class="second_step <?php if(!$group_selected){ echo "hidden"; }  ?>">
     <?php
-        foreach ($students_list as $key => $title) {
+        foreach ($students_list as $id => $title) {
            echo "<div><a href='".$id."' >".$title."</a></div>";
         }
     ?>
