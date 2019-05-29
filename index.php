@@ -43,7 +43,7 @@ if( isset($_GET['action']) ){
             }
             ?>
         </select>
-    <div>
+    </div>
 
     <div class="second_step <?php if(!$group_selected){ echo "hidden"; }  ?>">
     <?php
