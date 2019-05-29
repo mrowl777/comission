@@ -46,14 +46,14 @@ function update_comment(){
 function submit_form(){
   var type = $(this).parent().attr('id');
   var param = $(this).parent().find('input').val();
-console.log(param);
-  return;
   if( param = '' || !param ){
     alert('Заполните поле!');
     return;
   }
   switch (type) {
     case 'new_leader':
+      console.log(param);
+      return;
       put_leader( param )
       break;
     case 'new_group':
