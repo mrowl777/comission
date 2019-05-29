@@ -73,6 +73,10 @@ class Handler extends db_handler {
         return $this->load_student_data( $sid );
     }
 
+    function kill_session(){
+        setcookie('rights', null, -1, '/');
+    }
+
     function try_au(){
         $login = $_POST['login'];
         $password = $_POST['password'];
@@ -153,6 +157,9 @@ if( isset( $_POST['action'] ) ){
             break;
         case 'login':
             $handler->try_au();
+            break;
+        case 'logout':
+            $handler->kill_session();
             break;
         default:
             die();

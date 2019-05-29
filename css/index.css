@@ -171,3 +171,14 @@ hr{
   justify-content: space-between;
   margin-bottom: 15px;
 }
+#logout{
+  position: absolute;
+  bottom: 10;
+  right: 10;
+  cursor: pointer;
+  padding: 7px 15px;
+  border-radius: 5px;
+  background: darkgrey;
+  outline: none;
+  border: none;
+}

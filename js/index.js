@@ -7,6 +7,16 @@ function init(){
   $('.login_btn').click( try_auth );
 }
 
+function logout(){
+  $.post(
+    "handler.php",
+    {
+        action: "logout"
+    },
+    on_action_answer
+  );
+}
+
 function try_auth(){
   var login = $('input[name=username]').val();
   var password = $('input[name=password]').val();

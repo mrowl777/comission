@@ -164,5 +164,5 @@ if( isset($_GET['action']) ){
     <div class="line"><p>Пароль:</p><input type="password" name="password" placeholder="Введите пароль"></div>
     <button class="login_btn" >ВОЙТИ</button>
 </div>
-
+<button id="logout" class="<?php if($need_login){ echo 'hidden';} ?>">Выйти</button>
 </body>
