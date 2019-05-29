@@ -66,15 +66,15 @@ function put_leader( name ){
   var parts = name.split(' ');
   console.log(name);
   console.log(parts[0]);
-  $.post(
-    "handler.php",
-    {
-        action: "add_leader",
-        title: name,
-        last_name: parts[0]
-    },
-    on_leader_created
-  );
+  // $.post(
+  //   "handler.php",
+  //   {
+  //       action: "add_leader",
+  //       title: name,
+  //       last_name: parts[0]
+  //   },
+  //   on_leader_created
+  // );
 }
 
 function put_group( title ){
