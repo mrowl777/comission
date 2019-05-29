@@ -63,6 +63,7 @@ function submit_form(){
 }
 
 function put_leader( name ){
+  name = name + '';
   var parts = name.split(' ');
   $.post(
     "handler.php",
