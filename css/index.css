@@ -10,49 +10,6 @@ body{
   background:#263238;
   overflow: auto;
 }
-
-/* .input{
-  width: 500px;
-  height: 30px;
-  background: none;
-  border: none;
-  border-bottom: solid 2px #fff;
-  outline: none;
-  font-size: 22px;
-  color: #fff;
-  padding-bottom: 6px;
-} */
-
-/* .search{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 540px;
-}
-
-.search img{
-  width: 30px;
-} */
-
-/* .data_block{
-  display: none;
-}
-
-.data_block div {
-  display: flex;
-} */
-/* .welcome{
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  color: darkgray;
-  margin-top: 25px;
-  line-height: 1.5;
-}
-.welcome a{
-  color: red;
-} */
-
 .content{
   display: flex;
   flex-direction: column;
@@ -60,17 +17,6 @@ body{
   margin-top: 51px;
   line-height: 1.5;
 }
-/* .block{
-  color: darkgray;
-  display: flex;
-  align-items: center;
-  width: 60%;
-  justify-content: flex-end;
-  padding: 10 0;
-}
-.block > p{
-  margin-right: 25;
-} */
 .new_student{
   margin-left: 10px;
 }
@@ -102,9 +48,6 @@ select{
 .add_field{
   padding-left: 6px;
 }
-/* #cur, #gr{
-  float: left;
-} */
 .plus_block{
   float: right;
 }
@@ -118,18 +61,6 @@ select{
   margin-left: 10px;
   cursor: pointer;
 }
-/* .edit_comment, .update_mark, .update_leader, .intable{
-  width: 100%;
-  cursor: pointer;
-  border-radius: 0;
-  background: transparent;
-} */
-/* .tbtn{
-  width: 85px;
-} */
-/* .cur_block,.gr_block{
-  display: flex;
-} */
 .first_step{
   display: flex;
   margin-left: 50px;
@@ -139,17 +70,12 @@ select{
 }
 .each_student{
   margin-left: 10%;
-
 }
 .each_student a{
   text-decoration: none;
   color: aliceblue;
   cursor: pointer;
 }
-/* .d_table{
-
-} */
-
 .student_info{
   margin-left: 30%;
   margin-top: 10%;
@@ -179,4 +105,12 @@ select{
 }
 .student_mark{
   width: 110px;
+}
+.start_link{
+  text-decoration: none;
+  font-size: 25px;
+  color: antiquewhite;
+  text-align: center;
+  cursor: pointer;
+  margin-top: 50px;
 }

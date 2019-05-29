@@ -132,5 +132,6 @@ if( isset($_GET['action']) ){
         <input type="text" id="new_student_comment" placeholder="Комментарий">
         <button id="new_stud_add" class="submit">OK</button>
     </div> -->
+    <a href="/comission" class="start_link">В начало</a>
 </div>
 </body>
