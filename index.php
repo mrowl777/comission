@@ -57,7 +57,7 @@ if( isset($_GET['action']) ){
     </div>
     
     <div class="student_info <?php if(!$passed ){ echo "hidden"; }  ?>">
-        <div class="student_block">
+        <div class="student_block" id='<?php  echo $student_data['id'] ?>'>
             <div class="student_title">
                 <p><?php  echo $student_data['title'] ?></p>
             </div>
@@ -97,7 +97,7 @@ if( isset($_GET['action']) ){
 
             <div class="comment">
                 <p>Комментарий:</p>
-                <textarea><?php  echo $student_data['comment'] ?></textarea>
+                <textarea id="_comment"><?php  echo $student_data['comment'] ?></textarea>
             </div>
         </div>
     </div>

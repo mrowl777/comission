@@ -7,16 +7,41 @@ function init(){
   // $('.update_leader').change( update_leader );
   // $('#cur_plus_btn').click( show_cur_field );
   // $('#gr_plus_btn').click( show_gr_field );
-
-
+  
+  $('.student_mark').change( update_mark );
   $('#choose_group').change( load_students_list );
+  $('#_comment').on( 'keyup', update_comment );
 }
 
 function load_students_list(){
   var value = $(this).find('option:selected').val();
   document.location.href= location + "?group_id=" + value + "&action=load_students"
 }
+function update_mark(){
+  var id = $('.student_block').attr('id');
+  var value = $(this).find('option:selected').val();
+  $.post(
+    "handler.php",
+    {
+        action: "update_mark",
+        id: id,
+        mark: value
+    },
+  );
+}
 
+function update_comment(){
+  var id = $('.student_block').attr('id');
+  var text = $(this).text();
+  $.post(
+    "handler.php",
+    {
+        action: "edit_comment",
+        id: id,
+        text: text
+    }
+  );
+}
 
 
 
