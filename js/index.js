@@ -7,7 +7,19 @@ function init(){
   $('.update_leader').change( update_leader );
   $('#cur_plus_btn').click( show_cur_field );
   $('#gr_plus_btn').click( show_gr_field );
+
+
+  $('#choose_group').change( load_students_list );
 }
+
+function load_students_list(){
+  var value = $(this).find('option:selected').val();
+  document.location.href= location + "?group_id=" + value + "&action=load_students"
+}
+
+
+
+
 
 function show_gr_field(){
   $(this).hide();

@@ -55,13 +55,17 @@ class Handler extends db_handler {
         $leaders = $this->load_leaders();
         return $leaders;
     }
-
+    
     function get_students(){
         $students = $this->load_stud_list();
         if( !$students ){
             return false;
         }
         return $students;
+    }
+
+    function get_students_list( $group ){
+        return $this->load_students_list( $group );
     }
 }
 
