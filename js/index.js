@@ -141,6 +141,7 @@ function reload( data ){
   var obj = $.parseJSON(data);
   if( obj.result == 'error' ){
     alert('Ошибка! Попробуйте еще раз.');
+    $('input[name=password]').val('');
     return;
   }
   document.location.reload();

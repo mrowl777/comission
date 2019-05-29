@@ -180,7 +180,7 @@ class db_handler {
 
         $user = $data->fetch_assoc();
 
-        if($user['pass'] != md5(md5($password))){
+        if($user['pass'] !== md5(md5($password))){
             return false;
         }
 
