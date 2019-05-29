@@ -56,6 +56,39 @@ if( isset($_GET['action']) ){
         }
     ?>
     </div>
+    
+    <div class="student_info <?php if(!$passed ){ echo "hidden"; }  ?>">
+        <div class="student_block">
+            <div class="student_title">
+                <p><?php  echo $student_data['title'] ?></p>
+            </div>
+
+            <div class="mblock">
+                <p>Группа:</p>
+                <div class="student_group"><?php  echo $student_data['group'] ?></div>
+            </div>
+
+            <div class="mblock">
+                <p>Тема:</p>
+                <div class="student_theme"><?php  echo $student_data['theme'] ?></div>
+            </div>
+
+            <div class="mblock">
+                <p>Руководитель:</p>
+                <div class="student_leader"><?php  echo $student_data['leader'] ?></div>
+            </div>
+            <div class="mblock">
+                <p>Оценка: </p>
+                <div class="student_mark"><?php  echo $student_data['mark'] ?></div>
+            </div>
+
+
+            <div class="comment">
+                <p>Комментарий:</p>
+                <textarea value="<?php  echo $student_data['comment'] ?>"></textarea>
+            </div>
+        </div>
+    </div>
 
 
     <!-- <div class="new_student <?php //if($students){ echo "hidden"; }  ?>">
