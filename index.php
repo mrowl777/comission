@@ -162,7 +162,7 @@ if( isset($_GET['action']) ){
 <form id="login" class="<?php if(!$need_login){ echo 'hidden';} ?>">
     <div class="line"><p>Логин:</p><input type="text" name="username"  placeholder="Введите логин"></div>
     <div class="line"><p>Пароль:</p><input type="password" name="password" placeholder="Введите пароль"></div>
-    <input class="login_btn" value="ВОЙТИ">
+    <button class="login_btn" value="ВОЙТИ">
 </form>
 
 </body>
