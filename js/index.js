@@ -77,6 +77,7 @@ function put_leader( name ){
 }
 
 function put_group( title ){
+  console.log(title);
   $.post(
     "handler.php",
     {
