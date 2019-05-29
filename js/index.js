@@ -32,7 +32,7 @@ function update_mark(){
 
 function update_comment(){
   var id = $('.student_block').attr('id');
-  var text = $(this).text();
+  var text = $(this).val();
   console.log(text);
   $.post(
     "handler.php",
