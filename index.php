@@ -11,7 +11,6 @@ if( isset($_GET['action']) ){
     switch ($_GET['action']) {
         case 'load_students':
             $students_list = $_handler->get_students_list($_GET['group_id']);
-            print_r($students_list);
             $group_selected = true;
             break;
         
