@@ -46,7 +46,7 @@ function update_comment(){
 function submit_form(){
   var type = $(this).parent().attr('id');
   var param = $(this).parent().find('input').val();
-  if( param = '' || !param ){
+  if( param = '' ){
     alert('Заполните поле!');
     return;
   }
