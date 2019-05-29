@@ -52,8 +52,7 @@ function submit_form(){
   }
   switch (type) {
     case 'new_leader':
-      var parts = param.split(' ');
-      put_leader( param, parts[0] )
+      put_leader( param )
       break;
     case 'new_group':
       put_group( param )
@@ -63,10 +62,9 @@ function submit_form(){
   }
 }
 
-function put_leader( name, last_name ){
+function put_leader( name ){
   
   console.log(name);
-  console.log(last_name);
   // $.post(
   //   "handler.php",
   //   {
