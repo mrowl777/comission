@@ -147,34 +147,6 @@ class db_handler {
         return $student;
     }
 
-    // function load_stud_list(){
-    //     $query="SELECT * FROM `students` WHERE 1";
-    //     $db_helper = $this->connect_db();
-    //     $object = $db_helper->query( $query );
-    //     $this->close_connection( $db_helper );
-    //     $count = mysqli_num_rows( $object ) === 0;
-    //     $groups = $this->load_groups();
-    //     $leaders = $this->load_leaders();
-    //     if( $count ){
-    //         return false;
-    //     }
-
-    //     $students = [];
-    //     while ($row = $object->fetch_assoc()) {
-    //         $title = $row["l_name"] . " " . $row["f_name"] . " " . $row["s_name"];
-    //         $students[] = [
-    //             'id' => $row["id"],
-    //             'title' => $title,
-    //             'group' => $groups[$row["_group"]],
-    //             'leader' => $leaders[$row["leader"]],
-    //             'theme' => $row["theme"],
-    //             'comment' => $row["comment"],
-    //             'mark' => $row['mark'],
-    //         ];
-    //     }
-
-    //     return $students;
-    // }
 }
 
 ?>
