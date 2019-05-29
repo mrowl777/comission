@@ -69,7 +69,7 @@ function put_leader( name ){
     {
         action: "add_leader",
         title: name,
-        last_name = parts[0]
+        last_name: parts[0]
     },
     on_leader_created
   );
