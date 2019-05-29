@@ -11,6 +11,7 @@ if( isset($_GET['action']) ){
     switch ($_GET['action']) {
         case 'load_students':
             $students_list = $_handler->get_students_list($_GET['group_id']);
+            print_r($students_list);
             $group_selected = true;
             break;
         
@@ -51,7 +52,7 @@ if( isset($_GET['action']) ){
            echo "<div><a href='".$id."' >".$title."</a></div>";
         }
     ?>
-    <div>
+    </div>
 
 
     <!-- <div class="new_student <?php //if($students){ echo "hidden"; }  ?>">

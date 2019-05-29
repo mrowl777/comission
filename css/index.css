@@ -130,6 +130,13 @@ select{
 .cur_block,.gr_block{
   display: flex;
 }
+.first_step{
+  display: flex;
+  margin-left: 50px;
+}
+#choose_group{
+  margin-left: 15px;
+}
 .d_table{
 
 }
