@@ -153,15 +153,16 @@ hr{
 
 #login{
   width: 300px;
-  margin: auto;
+  margin: 20% auto;
   color: aliceblue;
 }
 .login_btn{
   width: 100%;
-  margin-top: 25px;
+  margin-top: 10px;
   cursor: pointer;
 }
 .line{
   display: flex;
   justify-content: space-between;
+  margin-bottom: 15px;
 }

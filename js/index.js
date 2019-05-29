@@ -8,23 +8,21 @@ function init(){
 }
 
 function try_auth(){
-  var login = $('input[name=username]');
-  var password = $('input[name=password]');
+  var login = $('input[name=username]').val();
+  var password = $('input[name=password]').val();
   if( login == '' || password == '' ){
     alert('Заполните поля!');
     return;
   }
-  console.log(login);
-  console.log(password);
-  // $.post(
-  //   "handler.php",
-  //   {
-  //       action: "login",
-  //       login: login,
-  //       password: password
-  //   },
-  //   reload
-  // );
+  $.post(
+    "handler.php",
+    {
+        action: "login",
+        login: login,
+        password: password
+    },
+    reload
+  );
 }
 
 function load_students_list(){
