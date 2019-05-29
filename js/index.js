@@ -52,8 +52,6 @@ function submit_form(){
   }
   switch (type) {
     case 'new_leader':
-      console.log(param);
-      return;
       put_leader( param )
       break;
     case 'new_group':
@@ -65,16 +63,16 @@ function submit_form(){
 }
 
 function put_leader( name ){
-
-  // $.post(
-  //   "handler.php",
-  //   {
-  //       action: "add_leader",
-  //       title: name,
-  //       last_name: parts[0]
-  //   },
-  //   on_leader_created
-  // );
+  var parts = name.split(' ');
+  $.post(
+    "handler.php",
+    {
+        action: "add_leader",
+        title: name,
+        last_name: parts[0]
+    },
+    on_leader_created
+  );
 }
 
 function put_group( title ){
