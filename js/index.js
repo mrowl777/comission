@@ -63,13 +63,21 @@ function submit_form(){
 }
 
 function put_leader( name ){
+  var parts = name.split(' ');
+  var l_name;
+  if(typeof(parts[3]) != "undefined" && parts[3] !== null){
+    l_name = parts[3];
+  }else{
+    l_name = parts[2];
+  }
   $.post(
     "handler.php",
     {
         action: "add_leader",
-        title: name
+        title: name,
+        last_name = l_name
     },
-    on_action_answer
+    on_leader_created
   );
 }
 
@@ -200,7 +208,14 @@ function put_group( title ){
 // }
 
 
-
+function on_leader_created(data){
+  var obj = $.parseJSON(data);
+  var login = obj.login;
+  var password = obj.password;
+  var noty = "Запишите данные сотрудника. Логин: " + login + " , пароль: " + password;
+  alert(noty);
+  document.location.reload();
+}
 function on_action_answer(){
   alert('Выполнено');
   document.location.reload();

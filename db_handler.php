@@ -147,6 +147,25 @@ class db_handler {
         return $student;
     }
 
+    function add_user( $username, $pass ){
+        $db_helper = $this->connect_db();
+        if(!$this->check_free_name( $username )){
+            $username = $username . "_" . rand(0, 100);
+        }
+        $pass_md = md5(md5($pass)); 
+        $query = "INSERT INTO `users`(`id`, `login`, `pass`, `admin` ) VALUES ( '','".$username."','".$pass_md."','0' )";
+        $result = $db_helper->query( $query );
+        return array( $username, $pass );
+    }
+
+    function check_free_name( $name ){
+        $db_helper = $this->connect_db();
+        $query = "SELECT * FROM users WHERE `login` = '" . $name . "'";
+        $result = $db_helper->query( $query );
+        $this->close_connection( $db_helper );
+        $count = mysqli_num_rows( $result ) === 0;
+        return $count;
+    }
 }
 
 ?>
