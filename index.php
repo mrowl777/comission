@@ -95,6 +95,7 @@ if( isset($_GET['action']) ){
     </div>
 
     <div class="second_step <?php if(!$group_selected || $passed ){ echo "hidden"; }  ?>">
+    <h2>Выберите студента:</h2>
     <?php
         foreach ($students_list as $id => $title) {
            echo "<div class='each_student'><a href='?student_id=".$id."&action=get_data' >".$title."</a></div>";

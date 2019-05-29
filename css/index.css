@@ -64,9 +64,6 @@ select{
 .first_step p{
   width: 250px;
 }
-.each_student{
-  margin-left: 10%;
-}
 .each_student a{
   text-decoration: none;
   color: aliceblue;
@@ -146,4 +143,7 @@ select{
   outline: none;
   border: none;
   cursor: pointer;
+}
+.second_step{
+  text-align: center;
 }
