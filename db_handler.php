@@ -175,13 +175,13 @@ class db_handler {
         $count = mysqli_num_rows( $data ) === 0;
 
         if( $count ){
-            return false;
+            return 'not_found';
         }
 
         $user = $data->fetch_assoc();
 
         if($user['pass'] !== md5(md5($password))){
-            return false;
+            return 'wrong_password';
         }
 
         $rights = $user['admin'] == 1 ? 'admin' : 'user';

@@ -139,8 +139,14 @@ function on_leader_created(data){
 
 function reload( data ){
   var obj = $.parseJSON(data);
-  if( obj.result == 'error' ){
-    alert('Ошибка! Попробуйте еще раз.');
+  if( obj.result == 'not_found' ){
+    alert('Ошибка! Такого пользователя не существует. ');
+    $('input[name=login]').val('');
+    $('input[name=password]').val('');
+    return;
+  }
+  if( obj.result == 'wrong_password' ){
+    alert('Ошибка! Неверный пароль.');
     $('input[name=password]').val('');
     return;
   }

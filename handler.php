@@ -77,8 +77,11 @@ class Handler extends db_handler {
         $login = $_POST['login'];
         $password = $_POST['password'];
         $resp = $this->check_password($login, $password);
-        if(!$resp){
-            die( json_encode(['result' => 'error']) );
+        if($resp == 'not_found'){
+            die( json_encode(['result' => 'not_found']) );
+        }
+        if($resp == 'wrong_password' ){
+            die( json_encode(['result' => 'wrong_password']) );
         }
         $hash = hash('sha256', $resp );
         setcookie( 'rights', $hash, 0 );
