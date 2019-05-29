@@ -5,6 +5,7 @@ function init(){
   $('#choose_group').change( load_students_list );
   $('#_comment').on( 'keyup', update_comment );
   $('.login_btn').click( try_auth );
+  $('#logout').click( logout );
 }
 
 function logout(){
