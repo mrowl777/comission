@@ -46,6 +46,8 @@ function update_comment(){
 function submit_form(){
   var type = $(this).parent().attr('id');
   var param = $(this).parent().find('input').val();
+console.log(param);
+  return;
   if( param = '' || !param ){
     alert('Заполните поле!');
     return;
@@ -63,8 +65,7 @@ function submit_form(){
 }
 
 function put_leader( name ){
-  
-  console.log(name);
+
   // $.post(
   //   "handler.php",
   //   {
@@ -77,7 +78,6 @@ function put_leader( name ){
 }
 
 function put_group( title ){
-  console.log(title);
   $.post(
     "handler.php",
     {
