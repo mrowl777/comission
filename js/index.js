@@ -63,7 +63,6 @@ function submit_form(){
 }
 
 function put_leader( name ){
-  name = name.toString();
   var parts = name.split(' ');
   console.log(name);
   console.log(parts[0]);
