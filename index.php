@@ -85,7 +85,7 @@ if( isset($_GET['action']) ){
 
             <div class="comment">
                 <p>Комментарий:</p>
-                <textarea value="<?php  echo $student_data['comment'] ?>"></textarea>
+                <textarea><?php  echo $student_data['comment'] ?></textarea>
             </div>
         </div>
     </div>
