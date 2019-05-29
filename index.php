@@ -34,30 +34,66 @@ if( isset($_GET['action']) ){
 
 <div class="content">
 
-    <div class="first_step <?php if($group_selected){ echo "hidden"; }  ?>">
-        <p>Выберите группу</p>
-        <select id="choose_group">
-            <option value="0" selected disabled>Группа</option>
-            <?php
-            if($groups){
-                foreach ( $groups as $key => $group ){
-                    echo "<option value='".$key."'>".$group."</option>";
-                }
-            }
-            ?>
-        </select>
-    </div>
+    <div class="new_panel <?php if($group_selected){ echo "hidden"; }  ?>">
+        <div class="left_panel">
+            <div class="first_step">
+                <p>Выберите группу</p>
+                <select id="choose_group">
+                    <option value="0" selected disabled>Группа</option>
+                    <?php
+                    if($groups){
+                        foreach ( $groups as $key => $group ){
+                            echo "<option value='".$key."'>".$group."</option>";
+                        }
+                    }
+                    ?>
+                </select>
+            </div>
 
-    <div id="new_group" class="first_step <?php if($group_selected){ echo "hidden"; }  ?>">
-        <p>Создать группу</p>
-        <input type='text' placeholder="Введите номер группы">
-        <button class='submit'>OK</button>
-    </div>
+            <div id="new_group" class="first_step">
+                <p>Создать группу</p>
+                <input type='text' placeholder="Введите номер группы">
+                <button class='submit'>OK</button>
+            </div>
 
-    <div id="new_leader" class="first_step <?php if($group_selected){ echo "hidden"; }  ?>">
-        <p>Создать руководителя</p>
-        <input type='text' placeholder="Введите ФИО">
-        <button class='submit'>OK</button>
+            <div id="new_leader" class="first_step">
+                <p>Создать руководителя</p>
+                <input type='text' placeholder="Введите ФИО">
+                <button class='submit'>OK</button>
+            </div>
+        </div>
+
+        <div class="right_panel">
+            <div class="new_student">
+                <input type="text" id="new_student_l_name" placeholder="Фамилия">
+                <input type="text" id="new_student_f_name" placeholder="Имя">
+                <input type="text" id="new_student_s_name" placeholder="Отчество">
+                <select id="new_student_group">
+                    <option selected disabled>Группа</option>
+                    <?php
+                    if($groups){
+                        foreach ( $groups as $key => $group ){
+                            echo "<option value='".$key."'>".$group."</option>";
+                        }
+                    }
+                    ?>
+                </select>
+                <input type="text" id="new_student_theme" placeholder="Тема">
+                <select id="new_student_leader">
+                    <option selected disabled>Руководитель</option>
+                    <?php
+                    if($leaders){
+                        foreach ( $leaders as $key => $leader ){
+                            echo "<option value='".$key."'>".$leader."</option>";
+                        }
+                    }
+                    ?>   
+                </select>
+                <input type="text" id="new_student_comment" placeholder="Комментарий">
+                <button id="new_stud_add">OK</button>
+            </div>
+        </div>
+
     </div>
 
     <div class="second_step <?php if(!$group_selected || $passed ){ echo "hidden"; }  ?>">
@@ -113,37 +149,6 @@ if( isset($_GET['action']) ){
             </div>
         </div>
     </div>
-
-
-    <!-- <div class="new_student <?php //if($students){ echo "hidden"; }  ?>">
-        <input type="text" id="new_student_l_name" placeholder="Фамилия">
-        <input type="text" id="new_student_f_name" placeholder="Имя">
-        <input type="text" id="new_student_s_name" placeholder="Отчество">
-        <select id="new_student_group">
-            <option selected disabled>Группа</option>
-            <?php
-            // if($groups){
-                // foreach ( $groups as $key => $group ){
-                    // echo "<option value='".$key."'>".$group."</option>";
-                // }
-            // }
-            ?>
-        </select>
-        <input type="text" id="new_student_theme" placeholder="Тема">
-        <select id="new_student_leader">
-            <option selected disabled>Руководитель</option>
-            <?php
-            // if($leaders){
-                // foreach ( $leaders as $key => $leader ){
-                    // echo "<option value='".$key."'>".$leader."</option>";
-                // }
-            // }
-            ?>
-            
-        </select>
-        <input type="text" id="new_student_comment" placeholder="Комментарий">
-        <button id="new_stud_add" class="submit">OK</button>
-    </div> -->
     <a href="/comission" class="start_link <?php if(!$group_selected && !$passed) {echo 'hidden';} ?>">В начало</a>
 </div>
 </body>
