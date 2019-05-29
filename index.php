@@ -150,4 +150,11 @@ if( isset($_GET['action']) ){
     </div>
     <a href="/comission" class="start_link <?php if(!$group_selected && !$passed) {echo 'hidden';} ?>">В начало</a>
 </div>
+
+<form id="login">
+    <label for="username">Логин:</label><input type="text" name="username" class="placeholder" placeholder="Введите логин">
+    <label for="password">Пароль:</label><input type="password" name="password" class="placeholder" placeholder="Введите пароль">
+    <input type="submit" value="ВОЙТИ">
+</form>
+
 </body>
