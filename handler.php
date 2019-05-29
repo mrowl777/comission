@@ -75,6 +75,7 @@ class Handler extends db_handler {
 
     function kill_session(){
         setcookie('rights', null, -1);
+        die( json_encode(['result' => 'ok']) );
     }
 
     function try_au(){
