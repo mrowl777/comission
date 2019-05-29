@@ -166,6 +166,28 @@ class db_handler {
         $count = mysqli_num_rows( $result ) === 0;
         return $count;
     }
+
+    function check_password($login, $password){
+        $query = "SELECT `pass`, `admin` FROM `users` WHERE `login` = '".$login."'";
+        $db_helper = $this->connect_db();
+        $data = $db_helper->query( $query );
+        $this->close_connection( $db_helper );
+        $count = mysqli_num_rows( $data ) === 0;
+
+        if( $count ){
+            return false;
+        }
+
+        $user = $data->fetch_assoc();
+
+        if($user['pass'] != md5(md5($password))){
+            return false;
+        }
+
+        $rights = $user['admin'] == 1 ? 'admin' : 'user';
+
+        return $rights;
+    }
 }
 
 ?>

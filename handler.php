@@ -73,6 +73,18 @@ class Handler extends db_handler {
         return $this->load_student_data( $sid );
     }
 
+    function try_au(){
+        $login = $_POST['login'];
+        $password = $_POST['password'];
+        $resp = $this->check_password($login, $password);
+        if(!$resp){
+            die( json_encode(['result' => 'error']) )
+        }
+        $hash = hash('sha256', $resp );
+        setcookie( 'rights', $hash, 0 );
+        die( json_encode(['result' => 'ok']) )
+    }
+
     function rus2translit($string) {
         $converter = array(
             'а' => 'a',   'б' => 'b',   'в' => 'v',
@@ -135,6 +147,9 @@ if( isset( $_POST['action'] ) ){
             break;
         case 'update_leader':
             $handler->edit_leader();
+            break;
+        case 'login':
+            $handler->try_au();
             break;
         default:
             die();

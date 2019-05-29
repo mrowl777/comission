@@ -2,6 +2,14 @@
 
 include 'handler.php';
 
+$need_login = true;
+
+if ( isset($_COOKIE["rights"]) ){
+    $hash = hash('sha256', 'admin' );
+    $admin = $_COOKIE["rights"] == $hash ? true : false;
+    $need_login = false;
+}
+
 $_handler = new Handler();
 $groups = $_handler->get_groups();
 $leaders = $_handler->get_leaders();
@@ -32,7 +40,7 @@ if( isset($_GET['action']) ){
 </head>
 <body>
 
-<div class="content">
+<div class="content <?php if($need_login){ echo 'hidden';} ?>">
 
     <div class="new_panel <?php if($group_selected){ echo "hidden"; }  ?>">
         <div class="left_panel">
@@ -151,10 +159,10 @@ if( isset($_GET['action']) ){
     <a href="/comission" class="start_link <?php if(!$group_selected && !$passed) {echo 'hidden';} ?>">В начало</a>
 </div>
 
-<form id="login">
+<form id="login" class="<?php if(!$need_login){ echo 'hidden';} ?>">
     <div class="line"><p>Логин:</p><input type="text" name="username"  placeholder="Введите логин"></div>
     <div class="line"><p>Пароль:</p><input type="password" name="password" placeholder="Введите пароль"></div>
-    <input type="submit" value="ВОЙТИ">
+    <input type="submit" class="login_btn" value="ВОЙТИ">
 </form>
 
 </body>

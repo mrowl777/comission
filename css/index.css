@@ -150,3 +150,17 @@ select{
 hr{
   margin-bottom: 25;
 }
+
+#login{
+  width: 300px;
+  margin: auto;
+  color: aliceblue;
+}
+.login_btn{
+  width: 100%;
+  margin-top: 25px;
+}
+.line{
+  display: flex;
+  justify-content: space-between;
+}

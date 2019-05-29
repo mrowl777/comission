@@ -4,12 +4,32 @@ function init(){
   $('.student_mark').change( update_mark );
   $('#choose_group').change( load_students_list );
   $('#_comment').on( 'keyup', update_comment );
+  $('.login_btn').click( try_auth );
+}
+
+function try_auth(){
+  var login = $('input[name=username]');
+  var password = $('input[name=password]');
+  if( login == '' || password == '' ){
+    alert('Заполните поля!');
+    return;
+  }
+  $.post(
+    "handler.php",
+    {
+        action: "login",
+        login: login,
+        password: password
+    },
+    reload
+  );
 }
 
 function load_students_list(){
   var value = $(this).find('option:selected').val();
   document.location.href= location + "?group_id=" + value + "&action=load_students"
 }
+
 function update_mark(){
   var id = $('.student_block').attr('id');
   var value = $(this).find('option:selected').val();
@@ -108,7 +128,6 @@ function add_student(){
   );
 }
 
-
 function on_leader_created(data){
   var obj = $.parseJSON(data);
   var login = obj.login;
@@ -117,6 +136,16 @@ function on_leader_created(data){
   alert(noty);
   document.location.reload();
 }
+
+function reload( data ){
+  var obj = $.parseJSON(data);
+  if( obj.result == 'error' ){
+    alert('Ошибка! Попробуйте еще раз.');
+    return;
+  }
+  document.location.reload();
+}
+
 function on_action_answer(){
   alert('Выполнено');
   document.location.reload();
