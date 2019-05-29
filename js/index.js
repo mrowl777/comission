@@ -1,5 +1,4 @@
 function init(){
-  // $('.submit').click( submit_form );
   // $('#new_stud_add').click( add_sudent );
   // $('#table_add').click( add_student_table );
   // $('.edit_comment').on('keyup', update_comment );
@@ -8,6 +7,7 @@ function init(){
   // $('#cur_plus_btn').click( show_cur_field );
   // $('#gr_plus_btn').click( show_gr_field );
   
+  $('.submit').click( submit_form );
   $('.student_mark').change( update_mark );
   $('#choose_group').change( load_students_list );
   $('#_comment').on( 'keyup', update_comment );
@@ -40,6 +40,43 @@ function update_comment(){
         id: id,
         text: text
     }
+  );
+}
+
+function submit_form(){
+  var type = $(this).parent().attr('id');
+  var param = $(this).parent().find('input').val();
+  switch (type) {
+    case 'new_leader':
+      put_leader( param )
+      break;
+    case 'new_group':
+      put_group( param )
+      break;
+    default:
+      break;
+  }
+}
+
+function put_leader( name ){
+  $.post(
+    "handler.php",
+    {
+        action: "add_leader",
+        title: name
+    },
+    on_action_answer
+  );
+}
+
+function put_group( title ){
+  $.post(
+    "handler.php",
+    {
+        action: "add_group",
+        title: title
+    },
+    on_action_answer
   );
 }
 
@@ -158,42 +195,7 @@ function update_comment(){
 //   );
 // }
 
-// function submit_form(){
-//   var type = $(this).parent().find('input').attr('id');
-//   var param = $(this).parent().find('input').val();
-//   switch (type) {
-//     case 'new_leader':
-//       put_leader( param )
-//       break;
-//     case 'new_group':
-//       put_group( param )
-//       break;
-//     default:
-//       break;
-//   }
-// }
 
-// function put_leader( name ){
-//   $.post(
-//     "handler.php",
-//     {
-//         action: "add_leader",
-//         title: name
-//     },
-//     on_action_answer
-//   );
-// }
-
-// function put_group( title ){
-//   $.post(
-//     "handler.php",
-//     {
-//         action: "add_group",
-//         title: title
-//     },
-//     on_action_answer
-//   );
-// }
 
 function on_action_answer(){
   alert('Выполнено');

@@ -48,6 +48,18 @@ if( isset($_GET['action']) ){
         </select>
     </div>
 
+    <div id="new_group" class="first_step <?php if($group_selected){ echo "hidden"; }  ?>">
+        <p>Создать группу</p>
+        <input type='text' placeholder="Введите номер группы">
+        <button class='submit'>OK</button>
+    </div>
+
+    <div id="new_leader" class="first_step <?php if($group_selected){ echo "hidden"; }  ?>">
+        <p>Создать руководителя</p>
+        <input type='text' placeholder="Введите ФИО">
+        <button class='submit'>OK</button>
+    </div>
+
     <div class="second_step <?php if(!$group_selected || $passed ){ echo "hidden"; }  ?>">
     <?php
         foreach ($students_list as $id => $title) {
