@@ -147,3 +147,6 @@ select{
 .second_step{
   text-align: center;
 }
+hr{
+  margin-bottom: 25;
+}
