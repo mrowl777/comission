@@ -159,10 +159,10 @@ if( isset($_GET['action']) ){
     <a href="/comission" class="start_link <?php if(!$group_selected && !$passed) {echo 'hidden';} ?>">В начало</a>
 </div>
 
-<form id="login" class="<?php if(!$need_login){ echo 'hidden';} ?>">
+<div id="login" class="<?php if(!$need_login){ echo 'hidden';} ?>">
     <div class="line"><p>Логин:</p><input type="text" name="username"  placeholder="Введите логин"></div>
     <div class="line"><p>Пароль:</p><input type="password" name="password" placeholder="Введите пароль"></div>
     <button class="login_btn" >ВОЙТИ</button>
-</form>
+</div>
 
 </body>
