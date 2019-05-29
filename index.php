@@ -85,7 +85,7 @@ if( isset($_GET['action']) ){
                     $three = $student_data['mark'] == 3 ? 'selected' : '';
                     $four = $student_data['mark'] == 4 ? 'selected' : '';
                     $five = $student_data['mark'] == 5 ? 'selected' : '';
-                    echo "<select>";
+                    echo "<select class='student_mark'>";
                     echo "<option value='0' ".$none.">Отсутствует</option>";
                     echo "<option value='2' ".$two.">2</option>";
                     echo "<option value='3' ".$three.">3</option>";

@@ -177,3 +177,6 @@ select{
   justify-content: space-between;
   margin-bottom: 10px;
 }
+.student_mark{
+  width: 110px;
+}
