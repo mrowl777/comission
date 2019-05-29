@@ -141,7 +141,7 @@ function reload( data ){
   var obj = $.parseJSON(data);
   if( obj.result == 'not_found' ){
     alert('Ошибка! Такого пользователя не существует. ');
-    $('input[name=login]').val('');
+    $('input[name=username]').val('');
     $('input[name=password]').val('');
     return;
   }
