@@ -16,6 +16,7 @@ if( isset($_GET['action']) ){
         case 'get_data':
             $student_data = $_handler->get_student_data($_GET['student_id']);
             $group_selected = true;
+            $passed = true;
             break;
         default:
             break;
@@ -48,7 +49,7 @@ if( isset($_GET['action']) ){
         </select>
     </div>
 
-    <div class="second_step <?php if(!$group_selected){ echo "hidden"; }  ?>">
+    <div class="second_step <?php if(!$group_selected || $passed ){ echo "hidden"; }  ?>">
     <?php
         foreach ($students_list as $id => $title) {
            echo "<div class='each_student'><a href='?student_id=".$id."&action=get_data' >".$title."</a></div>";
