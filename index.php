@@ -79,7 +79,20 @@ if( isset($_GET['action']) ){
             </div>
             <div class="mblock">
                 <p>Оценка: </p>
-                <div class="student_mark"><?php  echo $student_data['mark'] ?></div>
+                <?php
+                    $none = $student_data['mark'] == 0 ? 'selected' : '';
+                    $two = $student_data['mark'] == 2 ? 'selected' : '';
+                    $three = $student_data['mark'] == 3 ? 'selected' : '';
+                    $four = $student_data['mark'] == 4 ? 'selected' : '';
+                    $five = $student_data['mark'] == 5 ? 'selected' : '';
+                    echo "<div class='student_mark'><select>";
+                    echo "<option value='0' ".$none.">Отсутствует</option>";
+                    echo "<option value='2' ".$two.">2</option>";
+                    echo "<option value='3' ".$three.">3</option>";
+                    echo "<option value='4' ".$four.">4</option>";
+                    echo "<option value='5' ".$five.">5</option>";
+                    echo "</select>";
+                ?>
             </div>
 
 
