@@ -46,6 +46,9 @@ function update_comment(){
 function submit_form(){
   var type = $(this).parent().attr('id');
   var param = $(this).parent().find('input').val();
+  if(param = ''){
+    return alert('Заполните поле!');
+  }
   switch (type) {
     case 'new_leader':
       put_leader( param )
