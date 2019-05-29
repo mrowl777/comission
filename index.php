@@ -65,7 +65,7 @@ if( isset($_GET['action']) ){
             </div>
 
             <div id="new_leader" class="first_step <?php if(!$admin){ echo 'hidden'; } ?>">
-                <p>Создать руководителя</p>
+                <p>Создать экзаменатора</p>
                 <input type='text' placeholder="Введите ФИО">
                 <button class='submit'>OK</button>
             </div>
