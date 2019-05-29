@@ -78,11 +78,11 @@ class Handler extends db_handler {
         $password = $_POST['password'];
         $resp = $this->check_password($login, $password);
         if(!$resp){
-            die( json_encode(['result' => 'error']) )
+            die( json_encode(['result' => 'error']) );
         }
         $hash = hash('sha256', $resp );
         setcookie( 'rights', $hash, 0 );
-        die( json_encode(['result' => 'ok']) )
+        die( json_encode(['result' => 'ok']) );
     }
 
     function rus2translit($string) {
