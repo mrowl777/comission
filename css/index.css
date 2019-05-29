@@ -17,12 +17,6 @@ body{
   margin-top: 51px;
   line-height: 1.5;
 }
-.new_student{
-  margin-left: 10px;
-}
-.new_student input{
-  width: 170px;
-}
 input, select{
   background: darkgrey;
   border: none;
@@ -117,8 +111,12 @@ select{
   margin-top: 50px;
 }
 .left_panel{
-
+  width: 550px;
+  float: left;
 }
-.right_panel{
-
+.new_student{
+  margin-left: 10px;
+}
+.new_student input{
+  width: 170px;
 }

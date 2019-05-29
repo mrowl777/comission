@@ -63,35 +63,33 @@ if( isset($_GET['action']) ){
             </div>
         </div>
 
-        <div class="right_panel">
-            <div class="new_student">
-                <input type="text" id="new_student_l_name" placeholder="Фамилия">
-                <input type="text" id="new_student_f_name" placeholder="Имя">
-                <input type="text" id="new_student_s_name" placeholder="Отчество">
-                <select id="new_student_group">
-                    <option selected disabled>Группа</option>
-                    <?php
-                    if($groups){
-                        foreach ( $groups as $key => $group ){
-                            echo "<option value='".$key."'>".$group."</option>";
-                        }
+        <div class="new_student">
+            <input type="text" id="new_student_l_name" placeholder="Фамилия">
+            <input type="text" id="new_student_f_name" placeholder="Имя">
+            <input type="text" id="new_student_s_name" placeholder="Отчество">
+            <select id="new_student_group">
+                <option selected disabled>Группа</option>
+                <?php
+                if($groups){
+                    foreach ( $groups as $key => $group ){
+                        echo "<option value='".$key."'>".$group."</option>";
                     }
-                    ?>
-                </select>
-                <input type="text" id="new_student_theme" placeholder="Тема">
-                <select id="new_student_leader">
-                    <option selected disabled>Руководитель</option>
-                    <?php
-                    if($leaders){
-                        foreach ( $leaders as $key => $leader ){
-                            echo "<option value='".$key."'>".$leader."</option>";
-                        }
+                }
+                ?>
+            </select>
+            <input type="text" id="new_student_theme" placeholder="Тема">
+            <select id="new_student_leader">
+                <option selected disabled>Руководитель</option>
+                <?php
+                if($leaders){
+                    foreach ( $leaders as $key => $leader ){
+                        echo "<option value='".$key."'>".$leader."</option>";
                     }
-                    ?>   
-                </select>
-                <input type="text" id="new_student_comment" placeholder="Комментарий">
-                <button id="new_stud_add">OK</button>
-            </div>
+                }
+                ?>   
+            </select>
+            <input type="text" id="new_student_comment" placeholder="Комментарий">
+            <button id="new_stud_add">OK</button>
         </div>
 
     </div>
