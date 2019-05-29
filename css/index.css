@@ -120,3 +120,30 @@ select{
 .new_student input{
   width: 170px;
 }
+.new_panel{
+  display: flex;
+}
+#new_student_l_name, 
+#new_student_f_name, 
+#new_student_s_name, 
+#new_student_group, 
+#new_student_theme,
+#new_student_leader{
+  width: 48%;
+  margin-bottom: 6px;
+}
+#new_student_comment{
+  margin-bottom: 6px;
+  width: 96.6%;
+  text-align: center;
+}
+#new_stud_add{
+  margin-bottom: 6px;
+  width: 96.6%;
+  padding: 7px 0;
+  border-radius: 5px;
+  background: darkgrey;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}

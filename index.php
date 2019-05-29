@@ -89,7 +89,7 @@ if( isset($_GET['action']) ){
                 ?>   
             </select>
             <input type="text" id="new_student_comment" placeholder="Комментарий">
-            <button id="new_stud_add">OK</button>
+            <button id="new_stud_add">Добавить</button>
         </div>
 
     </div>
