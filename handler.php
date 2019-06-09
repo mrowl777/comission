@@ -70,8 +70,8 @@ class Handler extends db_handler {
         return $leaders;
     }
 
-    function get_students_list( $group ){
-        return $this->load_students_list( $group );
+    function get_students_list( $group, $date ){
+        return $this->load_students_list( $group, $date );
     }
 
     function get_student_data( $sid ){

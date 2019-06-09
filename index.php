@@ -19,7 +19,7 @@ $comission = $_handler->get_comission();
 if( isset($_GET['action']) ){
     switch ($_GET['action']) {
         case 'load_students':
-            $students_list = $_handler->get_students_list($_GET['group_id']);
+            $students_list = $_handler->get_students_list($_GET['group_id'], $_GET['date']);
             $group_selected = true;
             break;
         case 'get_data':

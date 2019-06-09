@@ -101,8 +101,8 @@ class db_handler {
         return $leaders;
     }
 
-    function load_students_list( $group ){
-        $query="SELECT * FROM `students` WHERE `_group` = '".$group."'";
+    function load_students_list( $group, $date ){
+        $query="SELECT * FROM `students` WHERE `_group` = '".$group."' AND `date` = '".$date."'";
         $db_helper = $this->connect_db();
         $object = $db_helper->query( $query );
         $this->close_connection( $db_helper );

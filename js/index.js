@@ -48,9 +48,9 @@ function group_changed(){
 }
 
 function load_students(){
-  alert('begin_loading');
-  // var value = $(this).find('option:selected').val();
-  // document.location.href= location + "?group_id=" + value + "&action=load_students"
+  var group = $('#choose_group').find('option:selected').val();
+  var date = $('#choose_date').find('option:selected').val();
+  document.location.href= location + "?group_id=" + group + "&date=" + date + "&action=load_students"
 }
 
 function comission_submit(){
