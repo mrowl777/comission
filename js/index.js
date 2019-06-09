@@ -12,11 +12,21 @@ function init(){
 }
 
 function comission_handler(){
-  var value = $(this).find('option:selected').val();
+  var selected = $(this).find('option:selected');
+  var value = selected.val();
+  var text = selected.text();
   if( value == 'create_new' ){
     $('#comission').hide();
     $('#comission_field').removeClass('hidden');
     $('.point_block').removeClass('hidden');
+  }else{
+    $('#comission').hide();
+    $('#comission_field').removeClass('hidden');
+    $('#comission_field').val( text );
+    $('.point_block').removeClass('hidden');
+    if( selected.hasClass('leader_pck') ){
+      $('.point_block').attr( 'checked', true );
+    }
   }
 }
 
@@ -34,6 +44,17 @@ function comission_submit(){
           action: "add_comm",
           title: input,
           type: type
+      },
+      on_action_answer
+    );
+  }else{
+    $.post(
+      "handler.php",
+      {
+          action: "update_comm",
+          title: input,
+          type: type,
+          id: selector
       },
       on_action_answer
     );

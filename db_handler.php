@@ -197,8 +197,8 @@ class db_handler {
         return;
     }
 
-    function update_com_user( $title, $id ){
-        $query = "UPDATE `comission_list` SET `title`='".$title."' WHERE `id` = '". $id ."'";
+    function update_com_user( $title, $type, $id ){
+        $query = "UPDATE `comission_list` SET `title`='".$title."', `is_dir`='".$type."' WHERE `id` = '". $id ."'";
         $db_helper = $this->connect_db();
         $db_helper->query( $query );
         $this->close_connection( $db_helper );

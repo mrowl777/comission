@@ -86,8 +86,9 @@ class Handler extends db_handler {
 
     function upd_comm(){
         $name = $_POST['title'];
+        $type = $_POST['type'];
         $id = $_POST['id'];
-        return $this->update_com_user( $name, $id );
+        return $this->update_com_user( $name, $type, $id );
     }
 
     function del_comm(){
