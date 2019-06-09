@@ -190,7 +190,7 @@ class db_handler {
     }
 
     function create_com_user( $title, $dir ){
-        $query = "INSERT INTO `comission_list`(`id`, `title`, `is_dir`) VALUES ('','".$title."','"..$dir."')";
+        $query = "INSERT INTO `comission_list`(`id`, `title`, `is_dir`) VALUES ('','".$title."','".$dir."')";
         $db_helper = $this->connect_db();
         $db_helper->query( $query );
         $this->close_connection( $db_helper );
