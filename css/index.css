@@ -190,6 +190,12 @@ hr{
   height: 50px;
   margin: 20px;
 }
-.create_block{
-  
+#new_group input,
+#new_leader input{
+  width: 48%;
+}
+
+#new_group button,
+#new_leader button{
+  width: 150px;
 }

@@ -93,12 +93,12 @@ if( isset($_GET['action']) ){
             <input type="text" id="new_student_comment" placeholder="Комментарий">
             <button id="new_stud_add">Добавить</button>
 
-            <div id="new_group" class="create_block <?php if(!$admin){ echo 'hidden'; } ?>">
+            <div id="new_group" class=" <?php if(!$admin){ echo 'hidden'; } ?>">
                 <input type='text' placeholder="Введите номер новой группы">
                 <button class='submit'>Добавить</button>
             </div>
 
-            <div id="new_leader" class="create_block <?php if(!$admin){ echo 'hidden'; } ?>">
+            <div id="new_leader" class=" <?php if(!$admin){ echo 'hidden'; } ?>">
                 <input type='text' placeholder="Введите ФИО нового экзаменатора">
                 <button class='submit'>Добавить</button>
             </div>
