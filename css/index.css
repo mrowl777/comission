@@ -191,12 +191,14 @@ hr{
   margin: 20px;
 }
 #new_group input,
-#new_leader input{
+#new_leader input,
+.comission_block select{
   width: 48%;
 }
 
 #new_group button,
-#new_leader button{
+#new_leader button,
+.comission_block button{
   width: 150px;
 }
 #new_group, #new_leader, .comission_block{
