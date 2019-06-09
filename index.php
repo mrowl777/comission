@@ -170,27 +170,29 @@ if( isset($_GET['action']) ){
         
     </div> 
     
+    <div class="right_side">
+        <?php
+            echo "<h2>". $_GET['group_title'] ."</h2>";
 
-    <?php
-        echo "<h2>". $_GET['group_title'] ."</h2>";
+        if(!$students_list){
+            echo "<h2>По заданному запросу не найдено данных.</h2>";
+        }else{
+            echo "<table class='tftable' border='1'>";
+            echo "<tr><th>№</th><th>ФИО</th><th>Оценка</th><th>Комментарий</th></tr>";
+            $i = 1;
+            foreach ($students_list as $id => $student) {
+                echo "<tr><td>".$i."</td>";
+                echo "<td><a href='?student_id=".$id."&action=get_data' >".$student['title']."</a></td>";
+                echo "<td>".$student['mark']."</td>";
+                echo "<td>".$student['comment']."</td></tr>";
+                $i++;
+            }
 
-    if(!$students_list){
-        echo "<h2>По заданному запросу не найдено данных.</h2>";
-    }else{
-        echo "<table class='tftable' border='1'>";
-        echo "<tr><th>№</th><th>ФИО</th><th>Оценка</th><th>Комментарий</th></tr>";
-        $i = 1;
-        foreach ($students_list as $id => $student) {
-            echo "<tr><td>".$i."</td>";
-            echo "<td><a href='?student_id=".$id."&action=get_data' >".$student['title']."</a></td>";
-            echo "<td>".$student['mark']."</td>";
-            echo "<td>".$student['comment']."</td></tr>";
-            $i++;
+            echo "</table>";
         }
+        ?>
+    </div>
 
-        echo "</table>";
-    }
-    ?>
     </div>
     
     <div class="student_info <?php if(!$passed ){ echo "hidden"; }  ?>">
