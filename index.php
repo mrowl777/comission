@@ -168,7 +168,8 @@ if( isset($_GET['action']) ){
         }
     ?>   
         
-    </div>
+    </div> 
+    
 
     <?php
         echo "<h2>". $_GET['group_title'] ."</h2>";
@@ -176,9 +177,18 @@ if( isset($_GET['action']) ){
     if(!$students_list){
         echo "<h2>По заданному запросу не найдено данных.</h2>";
     }else{
-        foreach ($students_list as $id => $title) {
-            echo "<div class='each_student'><a href='?student_id=".$id."&action=get_data' >".$title."</a></div>";
+        echo "<table class='tftable' border='1'>";
+        echo "<tr><th>№</th><th>ФИО</th><th>Оценка</th><th>Комментарий</th></tr>";
+        $i = 1;
+        foreach ($students_list as $id => $student) {
+            echo "<tr><td>".$i."</td>";
+            echo "<td><a href='?student_id=".$id."&action=get_data' >".$student['title']."</a></td>";
+            echo "<td>".$student['mark']."</td>";
+            echo "<td>".$student['comment']."</td></tr>";
+            $i++;
         }
+
+        echo "</table>";
     }
     ?>
     </div>

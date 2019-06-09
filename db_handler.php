@@ -114,7 +114,14 @@ class db_handler {
         $students = [];
         while ($row = $object->fetch_assoc()) {
             $title = $row["l_name"] . " " . $row["f_name"] . " " . $row["s_name"];
-            $students[$row["id"]] = $title;
+            if( $row['mark'] == 0 ){
+                $row['mark'] = 'Нет оценки';
+            }
+            $students[$row["id"]] = [
+                'title' => $title,
+                'mark' => $row['mark'],
+                'comment' => $row['comment']
+            ];
         }
 
         return $students;
