@@ -234,7 +234,7 @@ class db_handler {
         return $comission;
     }
 
-    function get_dates(){
+    function load_dates(){
         $query = "SELECT DISTINCT `date` FROM `students` WHERE `date` != ''";
         $db_helper = $this->connect_db();
         $object = $db_helper->query( $query );
