@@ -24,14 +24,11 @@ function comission_submit(){
   var selector = $('#comission').find('option:selected').val();
   var input = $('#comission_field').val();
   var type = $("#is_main").prop("checked");
-  alert( input );
-  alert( type );
-  return;
   if( selector == 'create_new' ){
     $.post(
       "handler.php",
       {
-          action: "put_comm",
+          action: "add_comm",
           title: input,
           type: type
       },
