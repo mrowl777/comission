@@ -149,7 +149,7 @@ if( isset($_GET['action']) ){
         $normal_date = date("d.m.Y", strtotime($_GET['date']));
         $comission_html = '<h2>Члены комиссии: </h2>';
         $main = '<h2>Председатели: </h2>';
-        echo "<p>Дата: " . $normal_date . "</p> ";
+        echo "<h1>Дата: " . $normal_date . "</h1> <br/>";
         if($comission){
             $preds = [];
             foreach ( $comission as $each ){
@@ -163,7 +163,7 @@ if( isset($_GET['action']) ){
             foreach ( $preds as $each ){
                 $main.= "<p>".$each."</p>";
             }
-            echo $main;
+            echo $main . "<br/>";
             echo $comission_html;
         }
     ?>   
