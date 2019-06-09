@@ -233,6 +233,23 @@ class db_handler {
 
         return $comission;
     }
+
+    function get_dates(){
+        $query = "SELECT DISTINCT `date` FROM `students` WHERE `date` != ''";
+        $db_helper = $this->connect_db();
+        $object = $db_helper->query( $query );
+        $this->close_connection( $db_helper );
+        $count = mysqli_num_rows( $object ) === 0;
+        if( $count ){
+            return false;
+        }
+        $dates = [];
+        while ($row = $object->fetch_assoc()) {
+            $dates[] = $row['date'];
+        }
+
+        return $dates;
+    }
 }
 
 ?>

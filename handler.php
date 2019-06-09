@@ -61,6 +61,10 @@ class Handler extends db_handler {
         return $groups;
     }
 
+    function get_dates(){
+        return $this->get_dates();
+    }
+
     function get_leaders(){
         $leaders = $this->load_leaders();
         return $leaders;

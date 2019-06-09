@@ -12,6 +12,7 @@ if ( isset($_COOKIE["rights"]) ){
 
 $_handler = new Handler();
 $groups = $_handler->get_groups();
+$dates = $_handler->get_dates();
 $leaders = $_handler->get_leaders();
 $comission = $_handler->get_comission();
 
@@ -62,7 +63,20 @@ if( isset($_GET['action']) ){
                     ?>
                 </select>
             </div>
-
+            <div class="first_step">
+                <p>Выберите дату</p>
+                <select id="choose_date">
+                    <option value="0" selected disabled>Дата</option>
+                    <?php
+                    if($dates){
+                        foreach ( $dates as $date ){
+                            $normal_date = date("d.m.Y", strtotime($date))
+                            echo "<option value='".$date."'>".$normal_date."</option>";
+                        }
+                    }
+                    ?>
+                </select>
+            </div>
         </div>
 
         <div class="new_student <?php if(!$admin){ echo 'hidden'; } ?>">
