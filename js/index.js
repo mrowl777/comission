@@ -14,6 +14,7 @@ function init(){
 function comission_handler(){
   var value = $(this).find('option:selected').val();
   if( value == 'create_new' ){
+    $('#comission').hide();
     $('#comission_field').removeClass('hidden');
     $('.point_block').removeClass('hidden');
   }
