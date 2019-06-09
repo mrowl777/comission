@@ -144,17 +144,12 @@ if( isset($_GET['action']) ){
 
     <div class="second_step <?php if(!$group_selected || $passed ){ echo "hidden"; }  ?>">
     <?php
-    if($students_list){
-        echo "<h2>Выберите студента:</h2><hr/>";
+    if(!$students_list){
+        echo "<h2>По заданному запросу не найдено данных.</h2>";
     }else{
-        echo "<h2>В этой группе нет ни одного студента</h2>";
-    }
-    ?>
-    <?php
-    if($students_list){
         foreach ($students_list as $id => $title) {
             echo "<div class='each_student'><a href='?student_id=".$id."&action=get_data' >".$title."</a></div>";
-         }
+        }
     }
     ?>
     </div>

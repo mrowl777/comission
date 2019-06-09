@@ -105,7 +105,9 @@ select{
   color: antiquewhite;
   text-align: center;
   cursor: pointer;
-  margin-top: 50px;
+  position: absolute;
+  bottom: 50px;
+  left: 46%;
 }
 .left_panel{
   width: 550px;
