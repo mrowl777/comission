@@ -70,7 +70,7 @@ if( isset($_GET['action']) ){
                     <?php
                     if($dates){
                         foreach ( $dates as $date ){
-                            $normal_date = date("d.m.Y", strtotime($date))
+                            $normal_date = date("d.m.Y", strtotime($date));
                             echo "<option value='".$date."'>".$normal_date."</option>";
                         }
                     }
