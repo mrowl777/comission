@@ -62,7 +62,7 @@ select{
   margin-bottom: 36px;
 }
 .first_step p{
-  width: 250px;
+  width: 160px;
 }
 .each_student a{
   text-decoration: none;
@@ -110,8 +110,10 @@ select{
   left: 46%;
 }
 .left_panel{
-  width: 550px;
   float: left;
+  border-right: solid 1px;
+  height: 500px;
+  padding-right: 25;
 }
 .new_student{
   margin-left: 10px;
