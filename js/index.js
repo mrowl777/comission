@@ -6,7 +6,34 @@ function init(){
   $('#_comment').on( 'keyup', update_comment );
   $('.login_btn').click( try_auth );
   $('#logout').click( logout );
+  $('#comission').change( comission_handler );
+  $('.comission_submit').click( comission_submit );
   clock();
+}
+
+function comission_handler(){
+  var value = $(this).find('option:selected').val();
+  if( value == 'create_new' ){
+    $('#comission_field').removeClass('hidden');
+    $('.point_block').removeClass('hidden');
+  }
+}
+
+function comission_submit(){
+  var selector = $('#comission').find('option:selected').val();
+  var input = $('#comission_field').val();
+  var type = $("#is_main").prop("checked");
+  if( selector == 'create_new' ){
+    $.post(
+      "handler.php",
+      {
+          action: "put_comm",
+          title: input,
+          type: type
+      },
+      on_action_answer
+    );
+  }
 }
 
 function clock() {

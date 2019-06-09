@@ -74,6 +74,27 @@ class Handler extends db_handler {
         return $this->load_student_data( $sid );
     }
 
+    function get_comission(){
+        return $this->get_com_list();
+    }
+
+    function put_comm(){
+        $name = $_POST['title'];
+        $type = $_POST['type'];
+        return $this->create_com_user( $name, $type );
+    }
+
+    function upd_comm(){
+        $name = $_POST['title'];
+        $id = $_POST['id'];
+        return $this->update_com_user( $name, $id );
+    }
+
+    function del_comm(){
+        $id = $_POST['id'];
+        return $this->delete_com_user( $id );
+    }
+
     function kill_session(){
         setcookie('rights', null, -1);
         die( json_encode(['result' => 'ok']) );
@@ -162,6 +183,16 @@ if( isset( $_POST['action'] ) ){
             break;
         case 'logout':
             $handler->kill_session();
+            break;
+
+        case 'add_comm':
+            $handler->put_comm();
+            break;
+        case 'update_comm':
+            $handler->upd_comm();
+            break;
+        case 'delete_comm':
+            $handler->del_comm();
             break;
         default:
             die();

@@ -45,7 +45,7 @@ select{
 .plus_block{
   float: right;
 }
-.submit{
+.submit, .comission_submit{
   width: 32px;
   padding: 7px 0;
   border-radius: 5px;
@@ -57,7 +57,7 @@ select{
 }
 .first_step{
   display: flex;
-  margin-left: 50px;
+  margin-left: 30px;
   width: 550px;
   margin-bottom: 36px;
 }
@@ -204,4 +204,10 @@ hr{
   display: flex;
   width: 96.5%;
   justify-content: space-between;
+}
+.leader_pck{
+  background: red;
+}
+.point_block{
+  
 }

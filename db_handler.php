@@ -188,6 +188,51 @@ class db_handler {
 
         return $rights;
     }
+
+    function create_com_user( $title, $dir ){
+        $query = "INSERT INTO `comission_list`(`id`, `title`, `is_dir`) VALUES ('','".$title."','"..$dir."')";
+        $db_helper = $this->connect_db();
+        $db_helper->query( $query );
+        $this->close_connection( $db_helper );
+        return;
+    }
+
+    function update_com_user( $title, $id ){
+        $query = "UPDATE `comission_list` SET `title`='".$title."' WHERE `id` = '". $id ."'";
+        $db_helper = $this->connect_db();
+        $db_helper->query( $query );
+        $this->close_connection( $db_helper );
+        return;
+    }
+
+    function delete_com_user( $id ){
+        $query = "DELETE FROM `comission_list` WHERE `id` = '".$id."'";
+        $db_helper = $this->connect_db();
+        $db_helper->query( $query );
+        $this->close_connection( $db_helper );
+        return;
+    }
+
+    function get_com_list(){
+        $query="SELECT * FROM `comission_list` WHERE 1";
+        $db_helper = $this->connect_db();
+        $object = $db_helper->query( $query );
+        $this->close_connection( $db_helper );
+        $count = mysqli_num_rows( $object ) === 0;
+        if( $count ){
+            return false;
+        }
+
+        $comission = [];
+        while ($row = $object->fetch_assoc()) {
+            $comission[$row["id"]] = [
+                'name' => $row['title'],
+                'type' => $row['is_dir']
+            ];
+        }
+
+        return $comission;
+    }
 }
 
 ?>

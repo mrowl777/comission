@@ -13,6 +13,7 @@ if ( isset($_COOKIE["rights"]) ){
 $_handler = new Handler();
 $groups = $_handler->get_groups();
 $leaders = $_handler->get_leaders();
+$comission = $_handler->get_comission();
 
 if( isset($_GET['action']) ){
     switch ($_GET['action']) {
@@ -102,6 +103,25 @@ if( isset($_GET['action']) ){
                 <input type='text' placeholder="Введите ФИО нового экзаменатора">
                 <button class='submit'>Добавить</button>
             </div>
+
+            <select id="comission">
+                <option selected disabled>Редактировать комиссию</option>
+                <?php
+                if($comission){
+                    foreach ( $comission as $key => $each ){
+                        $marked = '';
+                        if( $each['type'] == 1 ){
+                            $marked = 'leader_pck';
+                        }
+                        echo "<option class='".$marked."' value='".$key."'>".$each['name']."</option>";
+                    }
+                }
+                ?>   
+                <option value="create_new">Добавить члена комиссии</option>
+            </select>
+            <input type='text' id='comission_field' placeholder="Введите ФИО члена комиссии" class='hidden'>
+            <div class='point_block hidden'> <p>Это председатель?</p><input type="checkbox" id='is_main'> </div>
+            <button class='comission_submit'>Сохранить</button>
         </div>
 
     </div>
