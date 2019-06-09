@@ -58,7 +58,6 @@ select{
 .first_step{
   display: flex;
   margin-left: 30px;
-  width: 550px;
   margin-bottom: 36px;
 }
 .first_step p{
