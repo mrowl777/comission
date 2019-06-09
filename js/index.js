@@ -49,8 +49,9 @@ function group_changed(){
 
 function load_students(){
   var group = $('#choose_group').find('option:selected').val();
+  var group_title = $('#choose_group').find('option:selected').text();
   var date = $('#choose_date').find('option:selected').val();
-  document.location.href= location + "?group_id=" + group + "&date=" + date + "&action=load_students"
+  document.location.href= location + "?group_id=" + group + "&group_title=" + group_title + "&date=" + date + "&action=load_students"
 }
 
 function comission_submit(){

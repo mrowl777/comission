@@ -171,6 +171,8 @@ if( isset($_GET['action']) ){
     </div>
 
     <?php
+        echo "<h2>". $_GET['group_title'] ."</h2>";
+
     if(!$students_list){
         echo "<h2>По заданному запросу не найдено данных.</h2>";
     }else{
