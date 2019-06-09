@@ -39,7 +39,11 @@ if( isset($_GET['action']) ){
     <script src="js/index.js"></script>
 </head>
 <body>
-
+<div class="header">
+    <img src="icon.png">    
+    <p>Секретарь комиссии ГЭК</p>
+    <span id="doc_time"></span>
+</div>
 <div class="content <?php if($need_login){ echo 'hidden';} ?>">
 
     <div class="new_panel <?php if($group_selected){ echo "hidden"; }  ?>">

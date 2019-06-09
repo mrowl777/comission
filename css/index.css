@@ -182,3 +182,7 @@ hr{
   outline: none;
   border: none;
 }
+.header{
+  display: flex;
+  justify-content: space-between;
+}
