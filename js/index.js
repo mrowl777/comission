@@ -23,7 +23,10 @@ function comission_handler(){
 function comission_submit(){
   var selector = $('#comission').find('option:selected').val();
   var input = $('#comission_field').val();
-  var type = $("#is_main").prop("checked");
+  var type = 0;
+  if( $("#is_main").prop("checked") ){
+    type = 1;
+  }
   if( selector == 'create_new' ){
     $.post(
       "handler.php",
