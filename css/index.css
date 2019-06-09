@@ -113,6 +113,7 @@ select{
   border-right: solid 1px;
   height: 500px;
   padding-right: 25;
+  width: 396px;
 }
 .new_student{
   margin-left: 10px;
