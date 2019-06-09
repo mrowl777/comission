@@ -212,5 +212,9 @@ hr{
   background: red;
 }
 .point_block{
-
+  display: flex;
+  align-items: center;
+}
+#is_main{
+  width: 24px;
 }
