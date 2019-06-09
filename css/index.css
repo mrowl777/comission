@@ -192,7 +192,8 @@ hr{
 }
 #new_group input,
 #new_leader input,
-.comission_block select{
+.comission_block select,
+#comission_field{
   width: 48%;
 }
 
