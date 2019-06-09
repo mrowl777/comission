@@ -185,4 +185,11 @@ hr{
 .header{
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  color: aliceblue;
+  font-size: 20px;
+}
+.header img{
+  height: 50px;
+  margin: 20px;
 }
