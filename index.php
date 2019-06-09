@@ -145,7 +145,27 @@ if( isset($_GET['action']) ){
     <div class="second_step <?php if(!$group_selected || $passed ){ echo "hidden"; }  ?>">
  
     <div class="left_panel">
-        info
+    <?php
+        $normal_date = date("d.m.Y", strtotime($_GET['date']));
+        echo "<p>Дата: " . $normal_date . "</p> ";
+        echo "<h2>Члены комиссии: </h2>";
+        if($comission){
+            $preds = [];
+            foreach ( $comission as $each ){
+                $marked = '';
+                if( $each['type'] == 1 ){
+                    $preds[] = $each['name'];
+                    continue;
+                }
+                echo "<p>".$each['name']."</p>";
+            }
+            echo "<h2>Председатели: </h2>";
+            foreach ( $preds as $each ){
+                echo "<p>".$each."</p>";
+            }
+        }
+    ?>   
+        
     </div>
 
     <?php
