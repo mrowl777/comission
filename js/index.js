@@ -48,6 +48,19 @@ function comission_submit(){
       on_action_answer
     );
   }else{
+
+    if( input == '' ){
+      $.post(
+        "handler.php",
+        {
+            action: "delete_comm",
+            id: selector
+        },
+        on_action_answer
+      );
+      return;
+    }
+
     $.post(
       "handler.php",
       {
@@ -58,6 +71,8 @@ function comission_submit(){
       },
       on_action_answer
     );
+
+
   }
 }
 
