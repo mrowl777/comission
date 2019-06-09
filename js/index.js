@@ -145,6 +145,7 @@ function add_student(){
   var leader = $('#new_student_leader').find('option:selected').val();
   var comment = $('#new_student_comment').val();
   var theme = $('#new_student_theme').val();
+  var date = $('#new_student_date').val();
   if( first_name == '' || last_name == '' || surname == '' ){
     alert('Заполните все поля!');
     return;
@@ -160,7 +161,8 @@ function add_student(){
         group: group,
         theme: theme,
         leader: leader,
-        comment: comment
+        comment: comment,
+        date: date
     },
     on_action_answer
   );

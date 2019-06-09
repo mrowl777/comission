@@ -125,14 +125,11 @@ select{
 #new_student_s_name, 
 #new_student_group, 
 #new_student_theme,
-#new_student_leader{
+#new_student_leader,
+#new_student_comment,
+#new_student_date{
   width: 48%;
   margin-bottom: 6px;
-}
-#new_student_comment{
-  margin-bottom: 6px;
-  width: 96.6%;
-  text-align: center;
 }
 #new_stud_add{
   margin-bottom: 6px;

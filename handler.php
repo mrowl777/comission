@@ -12,7 +12,8 @@ class Handler extends db_handler {
         $theme = $_POST['theme'];
         $leader = $_POST['leader'];
         $comment = $_POST['comment'];
-        $this->put_student( $name, $last_name, $surname, $group, $theme, $leader, $comment );
+        $date = $_POST['date'];
+        $this->put_student( $name, $last_name, $surname, $group, $theme, $leader, $comment, $date );
         die( json_encode(['result' => 'ok']) );
     }
 

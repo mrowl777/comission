@@ -58,9 +58,9 @@ class db_handler {
         return;
     }
 
-    function put_student( $name, $last_name, $surname, $group, $theme, $leader, $comment ){
-        $part_1 = "INSERT INTO `students`(`id`, `f_name`, `l_name`, `s_name`, `_group`, `leader`, `theme`, `comment`, `mark`) VALUES ";
-        $part_2 = "('','".$name."','".$last_name."','".$surname."','".$group."','".$leader."','".$theme."','".$comment."','0')";
+    function put_student( $name, $last_name, $surname, $group, $theme, $leader, $comment, $date ){
+        $part_1 = "INSERT INTO `students`(`id`, `f_name`, `l_name`, `s_name`, `_group`, `leader`, `theme`, `comment`, `mark`, `date`) VALUES ";
+        $part_2 = "('','".$name."','".$last_name."','".$surname."','".$group."','".$leader."','".$theme."','".$comment."','0', '".$date."')";
         $db_helper = $this->connect_db();
         $db_helper->query( $part_1 . $part_2 );
         $this->close_connection( $db_helper );
