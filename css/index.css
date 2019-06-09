@@ -199,7 +199,7 @@ hr{
 #new_leader button{
   width: 150px;
 }
-#new_group, #new_leader{
+#new_group, #new_leader, .comission_block{
   margin-top: 25;
   display: flex;
   width: 96.5%;
@@ -209,5 +209,5 @@ hr{
   background: red;
 }
 .point_block{
-  
+
 }
