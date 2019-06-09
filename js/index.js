@@ -25,7 +25,7 @@ function comission_handler(){
     $('#comission_field').val( text );
     $('.point_block').removeClass('hidden');
     if( selected.hasClass('leader_pck') ){
-      $('.point_block').attr( 'checked', true );
+      $('#is_main').attr( 'checked', true );
     }
   }
 }
