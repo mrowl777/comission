@@ -2,12 +2,13 @@ function init(){
   $('#new_stud_add').click( add_student );
   $('.submit').click( submit_form );
   $('.student_mark').change( update_mark );
-  $('#choose_group').change( load_students_list );
   $('#_comment').on( 'keyup', update_comment );
   $('.login_btn').click( try_auth );
   $('#logout').click( logout );
   $('#comission').change( comission_handler );
   $('.comission_submit').click( comission_submit );
+  $('#choose_date').change( date_changed );
+  $('#choose_group').change( group_changed );
   clock();
 }
 
@@ -28,6 +29,28 @@ function comission_handler(){
       $('#is_main').attr( 'checked', true );
     }
   }
+}
+
+function date_changed(){
+  var group = $('#choose_group').find('option:selected').val();
+  if( group == '0'){
+    alert('А теперь выберите группу.');
+    return;
+  }
+  load_students();
+}
+
+function group_changed(){
+  var date = $('#choose_date').find('option:selected').val();
+  if( date != '0'){
+    load_students();
+  }
+}
+
+function load_students(){
+  alert('begin_loading');
+  // var value = $(this).find('option:selected').val();
+  // document.location.href= location + "?group_id=" + value + "&action=load_students"
 }
 
 function comission_submit(){
@@ -128,11 +151,6 @@ function try_auth(){
     },
     reload
   );
-}
-
-function load_students_list(){
-  var value = $(this).find('option:selected').val();
-  document.location.href= location + "?group_id=" + value + "&action=load_students"
 }
 
 function update_mark(){

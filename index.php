@@ -104,7 +104,7 @@ if( isset($_GET['action']) ){
                 }
                 ?>   
             </select>
-            <input type="date" id="new_student_date" >
+            <input type="date" title="Дата защиты" id="new_student_date" >
             <input type="text" id="new_student_comment" placeholder="Комментарий">
             <button id="new_stud_add">Добавить</button>
 
