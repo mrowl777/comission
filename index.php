@@ -41,7 +41,7 @@ if( isset($_GET['action']) ){
     <script src="js/index.js"></script>
 </head>
 <body>
-<div class="header">
+<div class="header <?php if(!$need_login){ echo 'hidden';} ?>">
     <img src="icon.png">    
     <p>Секретарь комиссии ГЭК</p>
     <span id="doc_time"></span>
