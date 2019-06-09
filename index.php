@@ -147,8 +147,9 @@ if( isset($_GET['action']) ){
     <div class="left_panel">
     <?php
         $normal_date = date("d.m.Y", strtotime($_GET['date']));
+        $comission = '<h2>Члены комиссии: </h2>';
+        $main = '<h2>Председатели: </h2>';
         echo "<p>Дата: " . $normal_date . "</p> ";
-        echo "<h2>Члены комиссии: </h2>";
         if($comission){
             $preds = [];
             foreach ( $comission as $each ){
@@ -157,12 +158,13 @@ if( isset($_GET['action']) ){
                     $preds[] = $each['name'];
                     continue;
                 }
-                echo "<p>".$each['name']."</p>";
+                $comission.= "<p>".$each['name']."</p>";
             }
-            echo "<h2>Председатели: </h2>";
             foreach ( $preds as $each ){
-                echo "<p>".$each."</p>";
+                $main.= "<p>".$each."</p>";
             }
+            echo $main;
+            echo $comission;
         }
     ?>   
         
