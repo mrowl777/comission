@@ -34,7 +34,7 @@ function comission_handler(){
 function date_changed(){
   var group = $('#choose_group').find('option:selected').val();
   if( group == '0'){
-    alert('А теперь выберите группу.');
+    $('#choose_group').css('border', 'solid 1px red');
     return;
   }
   load_students();
