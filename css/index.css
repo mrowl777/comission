@@ -86,15 +86,7 @@ select{
   width: 110px;
 }
 .start_link{
-  /* text-decoration: none;
-  font-size: 25px;
-  text-align: center;
-  cursor: pointer;
-  position: absolute;
-  bottom: 29px;
-  left: 145px;
- */
-
+  color: #000;
   text-decoration: none;
   font-size: 20px;
   text-align: center;
