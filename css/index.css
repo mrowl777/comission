@@ -31,9 +31,6 @@ select{
   position: absolute;
   right: 20px;
 }
-.footer > p > a{
-  /* color: #FFF; */
-}
 .hidden{
   display: none !important;
 }
@@ -91,7 +88,6 @@ select{
 .start_link{
   text-decoration: none;
   font-size: 25px;
-  /* color: antiquewhite; */
   text-align: center;
   cursor: pointer;
   position: absolute;
@@ -145,7 +141,6 @@ hr{
 #login{
   width: 300px;
   margin: 20% auto;
-  /* color: aliceblue; */
 }
 .login_btn{
   width: 100%;
@@ -175,7 +170,6 @@ hr{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* color: aliceblue; */
   font-size: 20px;
 }
 .header img{
