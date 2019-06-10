@@ -13,13 +13,11 @@ body{
 .content{
   display: flex;
   flex-direction: column;
-  /* color: darkgray; */
   margin-top: 51px;
   line-height: 1.5;
 }
 input, select{
-  background: darkgrey;
-  border: none;
+  border: solid 1px darkgray;
   border-radius: 6px;
   padding: 5px 0px;
   width: 180px;
@@ -49,9 +47,8 @@ select{
   width: 32px;
   padding: 7px 0;
   border-radius: 5px;
-  background: darkgrey;
+  border: solid 1px darkgray;
   outline: none;
-  border: none;
   margin-left: 10px;
   cursor: pointer;
 }
@@ -77,8 +74,7 @@ select{
 .comment textarea{
   width: 100%;
   height: 50px;
-  background: darkgrey;
-  border: none;
+  border: solid 1px darkgray;
   border-radius: 6px;
   outline: none;
   padding: 5px 0px;
@@ -135,9 +131,8 @@ select{
   width: 96.6%;
   padding: 7px 0;
   border-radius: 5px;
-  background: darkgrey;
+  border: solid 1px darkgray;
   outline: none;
-  border: none;
   cursor: pointer;
 }
 .second_step{
@@ -158,9 +153,8 @@ hr{
   cursor: pointer;
   padding: 7px 0;
   border-radius: 5px;
-  background: darkgrey;
+  border: solid 1px darkgray;
   outline: none;
-  border: none;
 }
 .line{
   display: flex;
@@ -174,9 +168,8 @@ hr{
   cursor: pointer;
   padding: 7px 15px;
   border-radius: 5px;
-  background: darkgrey;
+  border: solid 1px darkgray;
   outline: none;
-  border: none;
 }
 .header{
   display: flex;
