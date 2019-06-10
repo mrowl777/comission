@@ -7,13 +7,13 @@
 }
   
 body{
-  background:#263238;
+  background: beige;
   overflow: auto;
 }
 .content{
   display: flex;
   flex-direction: column;
-  color: darkgray;
+  /* color: darkgray; */
   margin-top: 51px;
   line-height: 1.5;
 }
@@ -34,7 +34,7 @@ select{
   right: 20px;
 }
 .footer > p > a{
-  color: #FFF;
+  /* color: #FFF; */
 }
 .hidden{
   display: none !important;
@@ -62,11 +62,6 @@ select{
 }
 .first_step p{
   width: 160px;
-}
-.each_student a{
-  text-decoration: none;
-  color: aliceblue;
-  cursor: pointer;
 }
 .student_info{
   margin-left: 30%;
@@ -100,7 +95,7 @@ select{
 .start_link{
   text-decoration: none;
   font-size: 25px;
-  color: antiquewhite;
+  /* color: antiquewhite; */
   text-align: center;
   cursor: pointer;
   position: absolute;
@@ -155,7 +150,7 @@ hr{
 #login{
   width: 300px;
   margin: 20% auto;
-  color: aliceblue;
+  /* color: aliceblue; */
 }
 .login_btn{
   width: 100%;
@@ -187,7 +182,7 @@ hr{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: aliceblue;
+  /* color: aliceblue; */
   font-size: 20px;
 }
 .header img{
