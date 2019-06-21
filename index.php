@@ -36,7 +36,7 @@ if( isset($_GET['action']) ){
 <head>
     <title>Дипломная комиссия</title>
     <link href="css/index.css" rel="stylesheet" type="text/css" />
-    <link rel="shortcut icon" href="uni-logo.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="unilogo.svg" type="image/x-icon">
     <script src="js/jquery-3.4.0.js"></script>
     <script src="js/index.js"></script>
 </head>
