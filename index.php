@@ -36,13 +36,13 @@ if( isset($_GET['action']) ){
 <head>
     <title>Дипломная комиссия</title>
     <link href="css/index.css" rel="stylesheet" type="text/css" />
-    <link rel="shortcut icon" href="icon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="uni-logo.svg" type="image/x-icon">
     <script src="js/jquery-3.4.0.js"></script>
     <script src="js/index.js"></script>
 </head>
 <body>
 <div class="header <?php if($need_login){ echo 'hidden';} ?>">
-    <img src="icon.png">    
+    <img src="logo.svg">    
     <p>Секретарь комиссии ГЭК</p>
     <span id="doc_time"></span>
 </div>
