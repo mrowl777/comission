@@ -186,8 +186,11 @@ if( isset($_GET['action']) ){
             echo "<tr><th>№</th><th>ФИО</th><th>Оценка</th><th>Комментарий</th></tr>";
             $i = 1;
             foreach ($students_list as $id => $student) {
+                $date = $_GET['date'];
+                $group = $_GET['group_id'];
+                $group_title = $_GET['group_title'];
                 echo "<tr><td>".$i."</td>";
-                echo "<td><a href='?student_id=".$id."&action=get_data' >".$student['title']."</a></td>";
+                echo "<td><a href='?student_id=".$id."&date='.$date.'&group_title='.$group_title.'&group_id='.$group.'&action=get_data' >".$student['title']."</a></td>";
                 echo "<td>".$student['mark']."</td>";
                 echo "<td>".$student['comment']."</td></tr>";
                 $i++;
@@ -246,6 +249,14 @@ if( isset($_GET['action']) ){
         </div>
     </div>
     <a href="/comission" class="start_link <?php if(!$group_selected && !$passed) {echo 'hidden';} ?>">В начало</a>
+    <?php 
+        if( $passed ) {
+            $date = $_GET['date'];
+            $group = $_GET['group_id'];
+            $group_title = $_GET['group_title'];
+            echo '<a href="?group_id='.$group.'&group_title='.$group_title.'&date='.$date.'&action=load_students" class="start_link">Назад</a>';
+        } 
+    ?>
 </div>
 
 <div id="login" class="<?php if(!$need_login){ echo 'hidden';} ?>">
