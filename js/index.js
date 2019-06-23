@@ -102,6 +102,7 @@ function on_check_done( data ){
   if( selector == 'create_new' ){
     if ( already_exists ){
       alert('Председатель комиссии уже выбран. Для изменения председателя снимите с должности существующего и повторите попытку.');
+      document.location.reload();
       return;
     }
     $.post(
@@ -129,6 +130,7 @@ function on_check_done( data ){
 
     if ( already_exists ){
       alert('Председатель комиссии уже выбран. Для изменения председателя снимите с должности существующего и повторите попытку.');
+      document.location.reload();
       return;
     }
     $.post(
