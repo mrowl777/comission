@@ -195,6 +195,12 @@ function submit_form(){
   }
   switch (type) {
     case 'new_leader':
+      var modified_param = param.replace(/[^a-яА-ЯЁЪёъйЙ ]/ig,"");
+      if( param !== modified_param ){
+        $(this).parent().find('input').val(modified_param);
+        alert('Были удалены запрещенные символы. Проверьте правильность данных и повторите отправку формы.')
+        return;
+      }
       put_leader( param )
       break;
     case 'new_group':
