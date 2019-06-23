@@ -67,6 +67,62 @@ function comission_submit(){
   if( $("#is_main").prop("checked") ){
     type = 1;
   }
+
+  if( type == 0 ){
+    var data = {
+      selector: selector,
+      input: input,
+      type: type
+    };
+    var jdata = JSON.stringify(data);
+    on_check_done(jdata);
+  }
+  // if( selector == 'create_new' ){
+  //   $.post(
+  //     "handler.php",
+  //     {
+  //         action: "add_comm",
+  //         title: input,
+  //         type: type
+  //     },
+  //     on_action_answer
+  //   );
+  // }else{
+
+  //   if( input == '' ){
+  //     $.post(
+  //       "handler.php",
+  //       {
+  //           action: "delete_comm",
+  //           id: selector
+  //       },
+  //       on_action_answer
+  //     );
+  //     return;
+  //   }
+
+  //   $.post(
+  //     "handler.php",
+  //     {
+  //         action: "update_comm",
+  //         title: input,
+  //         type: type,
+  //         id: selector
+  //     },
+  //     on_action_answer
+  //   );
+
+
+  // }
+}
+
+function on_check_done( data ){
+  var obj = $.parseJSON(data);
+  var selector = obj.selector;
+  var input = obj.input;
+  var type = obj.type;
+  var result = obj.result;
+
   if( selector == 'create_new' ){
     $.post(
       "handler.php",
