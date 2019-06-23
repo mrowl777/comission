@@ -268,7 +268,7 @@ function put_user( name ){
   $.post(
     "handler.php",
     {
-        action: "add_leader",
+        action: "create_user",
         title: name,
     },
     on_user_created
