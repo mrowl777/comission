@@ -37,17 +37,7 @@ class Handler extends db_handler {
 
     function add_leader(){
         $name = $_POST['title'];
-        // $last_name = $_POST['last_name'];
-        // $login = $this->build_login( $last_name );
-        // $password = $this->generate_password();
         $this->put_leader( $name );
-        // list( $db_user, $db_pass ) = $this->add_user( $login, $password );
-        // $result = [
-        //     'result' => 'leader_created',
-        //     'login' => $db_user,
-        //     'password' => $db_pass
-        // ];
-        // die( json_encode($result) );
         die( json_encode(['result' => 'ok']) );
     }
 

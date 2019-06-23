@@ -250,15 +250,13 @@ function submit_form(){
       break;
   }
 }
-// on_user_created
+
 function put_leader( name ){
-  // var parts = name.split(' ');
   $.post(
     "handler.php",
     {
         action: "add_leader",
         title: name,
-        // last_name: parts[0]
     },
     on_action_answer
   );
