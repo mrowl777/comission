@@ -254,7 +254,7 @@ if( isset($_GET['action']) ){
             $date = $_GET['date'];
             $group = $_GET['group_id'];
             $group_title = $_GET['group_title'];
-            echo '<a href="?group_id='.$group.'&group_title='.$group_title.'&date='.$date.'&action=load_students" class="start_link">Назад</a>';
+            echo '<a href="?group_id='.$group.'&group_title='.$group_title.'&date='.$date.'&action=load_students" class="back_link">Назад</a>';
         } 
     ?>
 </div>
