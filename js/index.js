@@ -57,6 +57,12 @@ function load_students(){
 function comission_submit(){
   var selector = $('#comission').find('option:selected').val();
   var input = $('#comission_field').val();
+  var modified_input = input.replace(/[^a-яА-ЯЁЪёъйЙ]/ig,"");
+  if( input !== modified_input ){
+    $('#comission_field').val(modified_input);
+    alert('Были удалены запрещенные символы. Проверьте правильность данных и повторите отправку формы.')
+    return;
+  }
   var type = 0;
   if( $("#is_main").prop("checked") ){
     type = 1;
