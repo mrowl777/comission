@@ -190,7 +190,7 @@ if( isset($_GET['action']) ){
                 $group = $_GET['group_id'];
                 $group_title = $_GET['group_title'];
                 echo "<tr><td>".$i."</td>";
-                echo "<td><a href='?student_id=".$id."&action=get_data' >".$student['title']."</a></td>";
+                echo "<td><a href='?student_id=".$id."&group_id=".$group."&group_title=".$group_title."&date=".$date."&action=get_data' >".$student['title']."</a></td>";
                 echo "<td>".$student['mark']."</td>";
                 echo "<td>".$student['comment']."</td></tr>";
                 $i++;
