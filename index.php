@@ -118,6 +118,11 @@ if( isset($_GET['action']) ){
                 <button class='submit'>Добавить</button>
             </div>
 
+            <div id="new_user" class=" <?php if(!$admin){ echo 'hidden'; } ?>">
+                <input type='text' placeholder="Введите фамилию нового экзаменатора">
+                <button class='submit'>Добавить</button>
+            </div>
+
             <div class='comission_block'>
                 <select id="comission">
                     <option selected disabled>Редактировать комиссию</option>

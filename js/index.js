@@ -63,9 +63,7 @@ function comission_submit(){
     alert('Были удалены запрещенные символы. Проверьте правильность данных и повторите отправку формы.')
     return;
   }
-  // var type = 0;
   if( $("#is_main").prop("checked") ){
-    // type = 1;
     $.post(
       "handler.php",
       {
@@ -79,17 +77,6 @@ function comission_submit(){
     var jdata = JSON.stringify( { selector: selector, input: input, type: 0 } );
     on_check_done(jdata);
   }
-
-  // if( type == 0 ){
-  //   var data = {
-  //     selector: selector,
-  //     input: input,
-  //     type: type
-  //   };
-  //   var jdata = JSON.stringify(data);
-  //   on_check_done(jdata);
-  // }
-
 }
 
 function on_check_done( data ){
@@ -245,6 +232,17 @@ function submit_form(){
       }
       put_leader( param )
       break;
+
+      case 'new_user':
+      var modified_param = param.replace(/[^a-яА-ЯЁЪёъйЙ ]/ig,"");
+      if( param !== modified_param ){
+        $(this).parent().find('input').val(modified_param);
+        alert('Были удалены запрещенные символы. Проверьте правильность данных и повторите отправку формы.')
+        return;
+      }
+      put_user( param )
+      break;
+
     case 'new_group':
       put_group( param )
       break;
@@ -252,17 +250,28 @@ function submit_form(){
       break;
   }
 }
-
+// on_user_created
 function put_leader( name ){
-  var parts = name.split(' ');
+  // var parts = name.split(' ');
   $.post(
     "handler.php",
     {
         action: "add_leader",
         title: name,
-        last_name: parts[0]
+        // last_name: parts[0]
     },
-    on_leader_created
+    on_action_answer
+  );
+}
+
+function put_user( name ){
+  $.post(
+    "handler.php",
+    {
+        action: "add_leader",
+        title: name,
+    },
+    on_user_created
   );
 }
 
@@ -308,7 +317,7 @@ function add_student(){
   );
 }
 
-function on_leader_created(data){
+function on_user_created(data){
   var obj = $.parseJSON(data);
   var login = obj.login;
   var password = obj.password;

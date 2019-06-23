@@ -37,13 +37,27 @@ class Handler extends db_handler {
 
     function add_leader(){
         $name = $_POST['title'];
-        $last_name = $_POST['last_name'];
-        $login = $this->build_login( $last_name );
-        $password = $this->generate_password();
+        // $last_name = $_POST['last_name'];
+        // $login = $this->build_login( $last_name );
+        // $password = $this->generate_password();
         $this->put_leader( $name );
+        // list( $db_user, $db_pass ) = $this->add_user( $login, $password );
+        // $result = [
+        //     'result' => 'leader_created',
+        //     'login' => $db_user,
+        //     'password' => $db_pass
+        // ];
+        // die( json_encode($result) );
+        die( json_encode(['result' => 'ok']) );
+    }
+
+    function add_new_user(){
+        $name = $_POST['title'];
+        $login = $this->build_login( $name );
+        $password = $this->generate_password();
         list( $db_user, $db_pass ) = $this->add_user( $login, $password );
         $result = [
-            'result' => 'leader_created',
+            'result' => 'user_created',
             'login' => $db_user,
             'password' => $db_pass
         ];
@@ -211,6 +225,9 @@ if( isset( $_POST['action'] ) ){
             break;
         case '_check_dir':
             $handler->check_dir();
+            break;
+        case 'create_user':
+            $handler->add_new_user();
             break;
         default:
             die();

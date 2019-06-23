@@ -183,6 +183,7 @@ hr{
 }
 #new_group input,
 #new_leader input,
+#new_user input,
 .comission_block select,
 #comission_field{
   width: 48%;
@@ -190,10 +191,11 @@ hr{
 
 #new_group button,
 #new_leader button,
+#new_user button,
 .comission_block button{
   width: 150px;
 }
-#new_group, #new_leader, .comission_block{
+#new_group, #new_leader, #new_user, .comission_block{
   margin-top: 25;
   display: flex;
   width: 96.5%;
