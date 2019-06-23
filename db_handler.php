@@ -101,6 +101,16 @@ class db_handler {
         return $leaders;
     }
 
+    function dir_exist(){
+        $query = "SELECT * FROM `comission_list` WHERE `is_dir` = 1";
+        $db_helper = $this->connect_db();
+        $data = $db_helper->query( $query );
+        $this->close_connection( $db_helper );
+        $result = mysqli_num_rows( $data ) === 0 ?  false : true;
+
+        return $result;
+    }
+
     function load_students_list( $group, $date ){
         $query="SELECT * FROM `students` WHERE `_group` = '".$group."' AND `date` = '".$date."'";
         $db_helper = $this->connect_db();

@@ -63,57 +63,33 @@ function comission_submit(){
     alert('Были удалены запрещенные символы. Проверьте правильность данных и повторите отправку формы.')
     return;
   }
-  var type = 0;
+  // var type = 0;
   if( $("#is_main").prop("checked") ){
-    type = 1;
-  }
-
-  if( type == 0 ){
-    var data = {
-      selector: selector,
-      input: input,
-      type: type
-    };
-    var jdata = JSON.stringify(data);
+    // type = 1;
+    $.post(
+      "handler.php",
+      {
+          action: "_check_dir",
+          selector: selector,
+          input: input
+      },
+      on_check_done
+    );
+  }else{
+    var jdata = JSON.stringify( { selector: selector, input: input, type: 0 } );
     on_check_done(jdata);
   }
-  // if( selector == 'create_new' ){
-  //   $.post(
-  //     "handler.php",
-  //     {
-  //         action: "add_comm",
-  //         title: input,
-  //         type: type
-  //     },
-  //     on_action_answer
-  //   );
-  // }else{
 
-  //   if( input == '' ){
-  //     $.post(
-  //       "handler.php",
-  //       {
-  //           action: "delete_comm",
-  //           id: selector
-  //       },
-  //       on_action_answer
-  //     );
-  //     return;
-  //   }
-
-  //   $.post(
-  //     "handler.php",
-  //     {
-  //         action: "update_comm",
-  //         title: input,
-  //         type: type,
-  //         id: selector
-  //     },
-  //     on_action_answer
-  //   );
-
-
+  // if( type == 0 ){
+  //   var data = {
+  //     selector: selector,
+  //     input: input,
+  //     type: type
+  //   };
+  //   var jdata = JSON.stringify(data);
+  //   on_check_done(jdata);
   // }
+
 }
 
 function on_check_done( data ){
@@ -121,9 +97,13 @@ function on_check_done( data ){
   var selector = obj.selector;
   var input = obj.input;
   var type = obj.type;
-  var result = obj.result;
+  var already_exists = obj.result;
 
   if( selector == 'create_new' ){
+    if ( already_exists ){
+      alert('Председатель комиссии уже выбран. Для изменения председателя снимите с должности существующего и повторите попытку.');
+      return;
+    }
     $.post(
       "handler.php",
       {
@@ -147,6 +127,10 @@ function on_check_done( data ){
       return;
     }
 
+    if ( already_exists ){
+      alert('Председатель комиссии уже выбран. Для изменения председателя снимите с должности существующего и повторите попытку.');
+      return;
+    }
     $.post(
       "handler.php",
       {

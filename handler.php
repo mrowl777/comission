@@ -120,6 +120,16 @@ class Handler extends db_handler {
         die( json_encode(['result' => 'ok']) );
     }
 
+    function check_dir(){
+        $exists = $this->dir_exist();
+        $selector = $_POST['selector'];
+        $input = $_POST['input'];
+        if( $exists ){
+            die( json_encode(['result' => true, 'selector' => $selector, 'input' => $input, 'type' => 1 ]) );
+        }
+        die( json_encode(['result' => false, 'selector' => $selector, 'input' => $input, 'type' => 1]) );
+    }
+
     function rus2translit($string) {
         $converter = array(
             'а' => 'a',   'б' => 'b',   'в' => 'v',
@@ -198,6 +208,9 @@ if( isset( $_POST['action'] ) ){
             break;
         case 'delete_comm':
             $handler->del_comm();
+            break;
+        case '_check_dir':
+            $handler->check_dir();
             break;
         default:
             die();
